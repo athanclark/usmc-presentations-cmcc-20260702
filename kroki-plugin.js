@@ -20,6 +20,7 @@ const krokiLangs = [
   'rackdiag',
   'seqdiag',
   'svgbob',
+  'tikz',
   'umlet',
   'vega',
   'vegalite',
