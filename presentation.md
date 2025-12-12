@@ -51,11 +51,8 @@ Platoon Sergeant
 5. Memory
 6. Theory of Computing
 7. Trivial CPU and Assembly
-8. Effect of Operating Systems, Multi-Core, Multi-Thread, RISC vs. CISC, Tiers of Caches, pipelines, look-ahead, branch prediction, etc.
+8. Effect of Operating Systems
 8. Conclusion
-
-- show that 2^32 ~ 4 billion, 2^64 is a shitload more
-
 
 ---
 
@@ -630,10 +627,20 @@ $$ Acc \leftarrow M[MAR] $$
 
 ---
 
+## Modern CPUs and other Processing Units
+
+- Stack Pointers and Function Calls
+- Cache Tiers (L1, L2, L3)
+- In-Register ALUs (GPUs, FPUs, TPUs)
+- Reduced Instruction Sets vs. Complex Instruction Sets (RISC/CISC)
+- Pipelines and Superscalar Architecture
+- Branch Prediction
+- Multi-Thread, Multi-Core, Multi-Processor
+
 ## Implications of Operating Systems
 
 - Time Sharing, Context Switching, and Process Schedulers
-- Stack Pointers and Function Calls
+- Exception Handling
 - Interrupt Requests and Networking
 - Memory Management
 
@@ -643,17 +650,17 @@ $$ Acc \leftarrow M[MAR] $$
 
 - National Programme on Technology Enhanced Learning (NPTEL) from the Indian Institute of Technology (IIT) - Computer Organization
 
+https://youtu.be/TH9nd-KdVHs?si=uPrWyvIMouTiMRs9
+
 ---
 
 ## Conclusion
 
 ![bg left:30% 80%](./qr.png)
 
-> Databases are designed to **retain**, **access**, and **manipulate** large amounts of data quickly and **preserve** them indefinitely.
+> CPUs are machines - its fuel are instructions, which are just data, and it produces and manipulates data.
 
-SQL is a popular, decent solution to those problems. You'll likely see it again in your professional career.
-
-Slides are available at [github.com/athanclark/usmc-presentation-databases-20251204](https://github.com/athanclark/usmc-presentation-databases-20251204)
+Slides are available at [github.com/athanclark/usmc-presentation-cpu-arch-20251211](https://github.com/athanclark/usmc-presentation-cpu-arch-20251211)
 
 ---
 
@@ -661,10 +668,8 @@ Slides are available at [github.com/athanclark/usmc-presentation-databases-20251
 
 1. Proxmox Virtualization System
     - great for home labs
-2. Haskell Programming Language
-    - it's like joining a cult
-3. CPU Architecture
-    - fun!
+2. Intoduction to Programming
+    - wavetops, but it's a typhoon
 4. Abstract Algebra
     - don't be afraid
 
