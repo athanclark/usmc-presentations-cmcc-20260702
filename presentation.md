@@ -20,11 +20,11 @@ style: |
 
 ![bg left:40% 80%](./3nb.png)
 
-# Introduction to CPU Architecture
+# Introduction to Programming
 
 SSgt Clark, Athan L
 
-_Presented on 20251211_
+_Presented on 20251218_
 
 ---
 
@@ -44,576 +44,583 @@ Platoon Sergeant
 
 ## Outline
 
+<div class="columns">
+<div>
+
 1. Introduction
-2. Boolean Electronics
-3. Binary Encoding
-4. Digital Electronics
-5. Memory
-6. Theory of Computing
-7. Trivial CPU and Assembly
-8. Effect of Operating Systems
-8. Conclusion
+2. Data and Actions
+3. Basic Operations
+4. Principle of Organization
+5. Functions
+6. Paradigms and Semantics
+
+</div>
+<div>
+
+7. Composition of Data
+8. Algebraic Data Types
+9. Objects and OOP
+10. Lambda Calculus
+11. Type Theory
+12. Conclusion
+
+</div>
+</div>
 
 ---
 
 ## Introduction
 
-> The processor controls the operation of the computer and performs its data processing functions. When there is only one processor, it is often referred to as the central processing unit (CPU).
+![bg left:40% 80%](./dude.jpg)
 
-— <u>Computer Organization and Architecture</u> by William Stallings
+> Programming is the act of designing a system that runs on another system designed to run systems.
 
----
-
-## Boolean Logic
-
-$$ Boolean := True | False $$
-- $x \land y \approx$ "both $x$ and $y$ are $True$"
-- $x \lor y \approx$ "either $x$ and $y$ are $True$"
-- $x \veebar y \approx$ "either $x$ and $y$ are $True$, but not both" (_exclusive_ or)
-- $\overline{x} \approx$ "not $x$" (make it the opposite)
+— Me
 
 ---
 
-## Boolean Electronics
+## Data and Actions
 
-- Truthiness of a Boolean value is represented as a signal - Voltage
-    - High Voltage $:= True$
-    - Low Voltage $:= False$
+Data = "Subject Matter"
+Actions = "What I'm Doing With It"
 
-<div class="columns strech">
-
-```tikz
-\documentclass{article}
-\usepackage{tikz}
-\usepackage{circuitikz}
-\usepackage{amssymb}
-\begin{document}
-\begin{circuitikz} 
-\draw
-(0,2)         node (myand1) [xshift=1cm,and port]           {}
-(myand1.out)  node      [anchor=south west]             {$A \land B$}
-(myand1.in 1) node (A1)     [anchor=east,xshift=-1cm]           {A}
-(myand1.in 2) node (B1)     [anchor=east,xshift=-1cm,yshift=-.7cm]  {B} 
-(0,0)         node (mynot1) [not port, scale=.5]            {} 
-(mynot1.out)  node      [anchor=south west]             {$\bar{B}$}
-(2.5,-.280)   node (myor1)  [or port]                   {}
-(myor1.out)   node      [anchor=south west,xshift=.05cm]        {$\bar{B} \lor C$}
-(4,1.72)      node (myor2)  [xor port]                   {}
-(myor1.in 2)  node (C1)     [anchor=east,xshift=-2.5cm]         {C}
-(myor2.out)   node      [anchor=south west]             {$(A \land B) \veebar (\bar{B} \lor C)$};
-
-\draw (myor2.out) -- ++(1cm,0);
-\draw (myand1.in 2) |- (mynot1.in);
-\draw (mynot1.out) -| (myor1.in 1);
-\draw (myand1.out) -- (myor2.in 1);
-\draw (myor1.out) -- (myor2.in 2);
-\draw (myand1.in 1) -- (A1);
-\foreach \Point in {(A1),(B1), (C1)}{
-    \node [xshift=.2cm] at \Point {\textbullet};
+```graphviz
+digraph G {
+  rankdir=LR;
+  A -> B [label="F"];
+  A -> A [label="G"];
 }
-\node [xshift=1.25cm] at (B1) {$\bullet$};
-\node [xshift=1cm] at (myor2.out) {$\bullet$};
-\draw (B1) -- ++(1.25cm,0);
-\draw (myor1.in 2) -- (C1);
-\end{circuitikz}
-\end{document}
 ```
 
-<div>
+General Ideas
 
-- Gates process signals to create new ones
-- Functionally identical to the logical expressions
-
-</div>
-
-</div>
+- Data is inert
+- Actions typically create data as a result
+- Effects - Actions that affect data other than the _subject matter_
 
 ---
 
-## Binary Encoding
+## Basic Operations
 
-$$ True = \mathrm{HIGH} = 1 $$
-$$ False = \mathrm{LOW} = 0 $$
-
-Binary Digit, or "Bit"
-
-$$ 1 \land 0 = 0 $$
-$$ 0 \lor 1 = 1 $$
-$$ 1 \veebar 1 = 0 $$
-$$ \bar{1} = 0 $$
-
----
-
-## Binary Encoding
-
-> How do we represent values other than Booleans?
-
-### Integers
-
-Depth of 1 bit
-
-| Bit 1 | Result Value |
-| :---  | :--------    |
-| 0     | 0            |
-| 1     | 1            |
-
----
-
-## Binary Encoding
-
-> How do we represent values other than Booleans?
-
-### Integers
-
-Depth of 2 bits
+Typically "Built-In" to the programming langauge
+$\quad \hookrightarrow$ a globally available "context" when desigining a program
 
 <small>
 
-| Bit 2 | Bit 1 | Result Value |
-| :---  | :---  | :--------    |
-| 0     | 0     | 0            |
-| 0     | 1     | 1            |
-| 1     | 0     | 2            |
-| 1     | 1     | 3            |
+| Data Types | Operations Supported |
+| :-------   | ------------: |
+| Numbers | Arithmetic, Trigonometry, Comparison |
+| Booleans | Logic |
+| Strings | Find-and-Replace, Concatenate/Append, "to lower" / "to upper" |
+| Arrays | Same as strings except ambiguous, "Mapping", "Reduce" |
+| Tuples | Mapping over Specific Position |
+| Most | Equality |
 
 </small>
 
 ---
 
-## Binary Encoding
+## Principle of Organization
 
-> How do we represent values other than Booleans?
+1. Doing a lot of different things can get complicated
+2. Organize the actions into sub-actions, group data together
+3. Make sure the sub-actions and groups are _"modular"_
+4. Modular actions and data groups can now be used as built-ins
+
+Programmers build tools to write programs, they extend and control their **context**
+
+- Is not "endless" - there is an end-state of a "product"
+
+---
+
+## Functions
+
+Means different things in different programming paradigms
+
+- Procedure captured over variables
+- Generalized over inputs that remain ambiguous
+- Can return results
+
+```hs
+square :: Number -> Number
+square x = x * x
+```
+
+```ts
+function square(x: number) -> number {
+  return x * x;
+}
+```
+
+---
+
+## Paradigms and Semantics
+
+<small>
+
+- **"Mutable"** Data - variables that can have their contents mutated / changed
+- **"Pure"** Functions - functions that don't cause side-effects
+- **"Imperative"** vs. **"Functional"** - sequence of steps vs. composition of results
+- **"Compiled"** vs. **"Interpreted"** - CPU executes the program via translation ahead of time, or just-in-time translation via an _interpreter_
+
+</small>
+
+### Types of Data
+
+- Object-Oriented, Mutable Objects that Contain Methods
+- Algebraic Data Types, Separate Enumerations and Structures
+- Inheritance, Traits, Generics - Means By Which Code Is Shared
+
+---
+
+# Are We Good?
+
+---
+
+# Are We Good?
+
+## Cool.
+
+---
+
+# Install VSCode
+
+[code.visualstudio.com](code.visualstudio.com)
+
+---
+
+# Install Node.js
+
+1. Install NVM-Windows: [github.com/coreybutler/nvm-windows](github.com/coreybutler/nvm-windows)
+2. Open PowerShell
+3. Verify NVM is installed: `nvm`
+4. Install a Long-Term Support Node.js: `nvm install lts`
+5. Verify Node.js is installed: `node --version`
+
+---
+
+## JavaScript
+
+- Mutable
+- Impure
+- Imperative
+- Interpreted
+- Object-Oriented
+- Inheritance
+
+It's widely available (all browsers support it)
+
+---
+
+## Composition of Data
+
+- Data "Contained" Within other _Structures_
+- Data that "Inherits" Functionality or Features
+
+### Typical Methods of Encapsulation
+
+- Struct - Tuples
+- Enum - "Either $X$ or $Y$" - must be only 1
+- "$X$ is a Number" $\implies$ "$X$ supports Arithmetic Operations"
+
+---
+
+## Algebraic Data Types
+
+Structure / Struct:
+
+<small>
 
 <div class="columns">
 
 <div>
 
-### Integers
+Rust:
 
-Depth of 3 bits
+```rs
+struct Foo {
+  field_one: i32,
+  field_two: String,
+}
+```
 
-> Notice the direction of "most significant bit"
+TypeScript:
 
-- Big-endian vs. Little-endian
+```ts
+type Foo = {
+  fieldOne: number,
+  fieldTwo: string,
+}
+```
 
 </div>
 
 <div>
 
-<small>
-
-| Bit 3 | Bit 2 | Bit 1 | Result Value |
-| :---  | :---  | :---  | :--------    |
-| 0     | 0     | 0     | 0            |
-| 0     | 0     | 1     | 1            |
-| 0     | 1     | 0     | 2            |
-| 0     | 1     | 1     | 3            |
-| 1     | 0     | 0     | 4            |
-| 1     | 0     | 1     | 5            |
-| 1     | 1     | 0     | 6            |
-| 1     | 1     | 1     | 7            |
-
-</small>
-
-</div>
-
-</div>
-
----
-
-## Binary Encoding
-
-> How do we represent values other than Booleans?
-
-### Integers
-
-Total number of possible values is 2 to the power of the bit depth
-
-<small>
-
-$$ 2^b $$
-$$ 2^3 = 8 $$
-$$ 2^{32} = 4,294,967,296 $$
-$$ 2^{64} = 18,446,744,073,709,551,616 $$
-
-</small>
-
----
-
-## Binary Encoding
-
-> How do we represent values other than Booleans?
-
-### Decimals
-
-- IEEE 754 Specification - "Floating-Point" Numbers
-
-Modeled after Scientific Notation
-
-$$ \pm Decimal \times 10^{Exponent} $$
-
-One bit for the sign (+ or -), a handful for the exponent, the rest for the decimal
-
----
-
-## Binary Encoding
-
-> How do we represent values other than Booleans?
-
-### Strings
-
-- ASCII - 8 bits (one byte) per character
-- Didn't Include Other Languages
-- ISO 8859 Was Garbage
-- Unicode Developed - UTF-8/16/32 (UTF-8 is most popular)
-
----
-
-## Binary Encoding
-
-> A note on Bits and Bytes
-
-- A Bit is one binary digit
-- A Byte is 8 bits (unless you live in the '70s)
-- A _Word_ is whatever the bit depth of the machine you're using
-    - Computers from the 2010's might often be 32-bit
-    - Most machines today are 64-bit
-
----
-
-# Are We Good?
-
----
-
-# Are We Good?
-
-## Cool.
-
----
-
-## Digital Electronics
-
-Boolean Logic at the Byte / Word level
-
-<div class="tiny">
-
-| Byte A | Byte B | Result |
-| :----- | :----- | -----: |
-| 0 | 0 | 0 |
-| 1 | 0 | 1 |
-| 0 | 0 | 0 |
-| 1 | 1 | 0 |
-| 1 | 0 | 1 |
-| 0 | 1 | 1 |
-| 0 | 0 | 0 |
-| 1 | 1 | 0 |
-
-</div>
-
----
-
-## Digital Electronics
-
-Circuitry for Arithmetic
-
-<div class="tiny">
-
-| Byte A | Byte B | Result |
-| :----- | :----- | -----: |
-| 0 | 0 | 1 |
-| 1 | 1 | 0 |
-| 0 | 0 | 0 |
-
-</div>
-
-- Add, Subtract, Multiply, Divide for Integers / Floats
-- Trigonometry, Exponents for Floats
-
----
-
-## Digital Electronics
-
-### Other Important Ideas
-
-Flip-Flops:
-
-- Stays in a state after a signal is removed
-- Foundation for Memory
-
-Clock:
-
-- Oscillations give circuits a metronome
-
----
-
-## Memory
-
-Examples of Memory
-
-<small>
-
-- Hard Disk
-- Solid-State Drive
-- Floppy Disk
-- Compact Disk
-- Random-Access Memory
-- Flash Memory
-- Read-Only Memory
-- CPU Cache
-- CPU Register
-
-</small>
-
----
-
-## Memory
-
-Ranks of Memory
-
-- CPU Register - Single Word
-- CPU Cache - Handful of Words
-- Volatile Memory - Lots of Words, Accessed through "Pages"
-- Persistent Memory - Tons of Words, Accessed through "Blocks" and "Sectors"
-
----
-
-## Memory
-
-Memory Addresses
-
-- Example: An array of 100 numbers
-
-```js
-[12, 4, 54, 23, ... ,34, 9]
+Haskell:
+
+```hs
+data Foo = Foo {
+  fieldOne :: Integer,
+  fieldTwo :: String,
+}
 ```
 
-- Value at index `0`: 12
-- Value at index `2`: 54
-- Value at index `99`: 9
+OOP:
 
-In Real-Life, **words** of Memory are indexed by **words**
-
----
-
-# We O.K.?
-
----
-
-# We O.K.?
-
-## Cool.
-
----
-
-![bg left:40% 80%](./turing.webp)
-
-## Theory of Computing
-
-Turing Machine
-
-- Discrete Tape of Glyphs
-- Machine that has a Read / Write head
-    - Can seek Left / Right #-of-steps
-    - Reads & Writes Glyhps
-    - I/O Defined WRT Read / Write
-    - Can have a "State"
-
----
-
-![bg left:40% 80%](./fsm.png)
-
-## Theory of Computing
-
-Finite State Automata
-
-- Discrete States as "Nodes"
-    - One Identified as "Start State"
-- Edges Between Nodes are Transitions
-- Transition Event = Read Event
-
----
-
-![bg left:40% 80%](./conway.webp)
-
-## Theory of Computing
-
-Conway's Game of Life
-
-- 2-Dimensional Tape
-- 2 Glyphs (On or Off)
-- Instructions Affect Neighbor Tape Positions
-
----
-
-![bg left:40% 80%](./neumann.svg)
-
-## High-Level Computer Design
-
-Von Neumann Architecture
-
-- Explicit I/O Devices
-- Pool of Memory = Tape
-- CPU = Machine with Read / Write head
-- General Purpose
-
----
-
-![bg left:40% 80%](./harvard.webp)
-
-## High-Level Computer Design
-
-Harvard Architecture
-
-- Very Similar to Von Neumann
-- Separate Data vs. Instruction Pools
-- Intended use - Microcontrollers
-
----
-
-# Check-In - Are We Okay?
-
----
-
-# Check-In - Are We Okay?
-
-## Cool.
-
----
-
-## Trivial CPU
-
-Requirements
-
-<div class="tiny">
-
-| Requirement | Solution |
-| :---------- | --------: |
-| Must be able to **Store** Some Data | Registers |
-| Must be able to Interact with **Memory** | Memory Unit & Memory Address Register |
-| Must be able to **Perform** an Instruction on Registers | Arithmetic and Logic Unit & Accumulator |
-| Must be able to **Identify Which Instruction** to Perform | Instruction Register |
-| Must be able to Point to the **Next Instruction** in Memory | Program Counter |
-| Must be able to **Conditionally** set the next instruction based on the results of the current instruction | Flags |
-| Must be able to **Move Data** from one Register to another | Control Unit |
-| Events have to be **Synchronized** | Timing Unit |
+```cpp
+class Foo {
+  int fieldOne;
+  char[] fieldTwo;
+}
+```
 
 </div>
 
----
-
-## Trivial CPU
-
-### Registers
-
-<small>
-
-- Store a Word
-- Takes 1 "Clock Cycle" to Access
-- Any Other Component Can Read It
-
-Some are General Purpose for Data Processing, or Special Purpose
-
-- Memory Access Register Stores Address in Memory to Read / Write
-- Instruction Register Stores Glyph Representing Current Action to Perform
-- Program Counter Stores Address of Next Instruction Stored in Memory
-- Accumulator Stores Results of Arithmetic & Logic Unit
+</div>
 
 </small>
 
 ---
 
-## Trivial CPU
+## Algebraic Data Types
 
-### Memory
+Enumeration / Enum:
 
-- Pool of Data (Words of Data)
-- Read / Write Access
-- Indexed by a Word (Address)
+<small>
 
----
+<div class="columns">
 
-## Trivial CPU
+<div>
 
-### Arithmetic Logic Unit (ALU)
+Rust:
 
-- Can perform Arithmetic on Words (Integers / Floats)
-- Can perform Logic on Words (Boolean)
-- Results are stored in Accumulator
-- Typically one of the Inputs is also from the Accumulator (overwrites when action is performed)
-- Action to be performed identifed by Instruction Register
+```rs
+enum Bar {
+  OnePossibility(i32),
+  OtherPossibility(String),
+  YetAnotherPossibility,
+}
+```
 
----
+</div>
 
-## Trivial CPU
+<div>
 
-### Instruction
+Haskell:
 
-Like in a Turing Machine, Reading a specific Glyph causes a Specific Action
+```hs
+data Bar
+  = OnePossibility Integer
+  | OtherPossibility String
+  | YetAnotherPossibility
+```
 
-- `00110101` $\rightarrow$ "Add Accumulator and Register 1, store to Accumulator"
-- `00111101` $\rightarrow$ "Copy Register 1 into Register 2"
-- `11010110` $\rightarrow$ "Read the value of memory at Memory Address Register, store into Register 3"
+</div>
 
----
+</div>
 
-## Trivial CPU
+A `Bar` must be either a `OnePossibility` holding a `i32`/`Integer`, a `OtherPossibility` holding a `String`, or a `YetAnotherPossibility`, which doesn't hold anything.
 
-### Instruction Register
-
-Either ALU, Memory Unit, or Control Unit performs Instruction stored in IR on the current clock cycle
-
-- Write Only
-
----
-
-## Trivial CPU
-
-### Program Counter
-
-- Points to the next instruction stored in Memory
-- PC holds an _address_ in memory
-- If left untouched, the CPU automatically increases this value after every clock cycle (goes to the next sequential instruction)
+</small>
 
 ---
 
-## Trivial CPU
+## Why "Algebraic"?
 
-### Flags
+- Struct = Product
+- Enum = Sum
 
-- Built-in system to branch into a different set of instructions based on the condition of some result
-- How "if $X$ then $Y$ else $Z$" runs under-the-hood, where $Y$ and $Z$ are new starting locations for more instructions in memory, and $X$ is some condition to test
+Think about the space of possible values a data type defines - a tuple or a struct multipies the total number of possible values, while an enum just adds them together
 
----
-
-## Trivial CPU
-
-### Control Unit
-
-- Facilitates copying data from one register to another, or from/to memory
-
-$$ R_1 \leftarrow Acc $$
-$$ M[MAR] \leftarrow R_2 $$
-$$ Acc \leftarrow M[MAR] $$
+- Example: Bit Depth - $2^n$ number of possiblities as `n` grows larger. If it's 2 bits, then it's $2 \times 2$
 
 ---
 
-## Trivial CPU
+## Why "Algebraic"?
 
-### Timing Unit
+<small>
 
-- Oscillator ticks once every clock cycle
-- Modern CPUs operate at the $>2 GHz$ range
-- Each clock cycle can do one of these things
-    - facilitate copying data from one register to another
-    - perform arithmetic on the accumulator and some other register
-    - fetch the next instruction
-    - increment the program counter
+```hs
+data Binary = BZero | BOne -- total possible values = 2
+data Trinary = TZero | TOne | TTwo -- total possible values = 3
+
+data BothAtTheSameTime = BothAtTheSameTime Binary Trinary
+data EitherOneOrTheOther = JustBinary Binary | JustTrinary Trinary
+```
+
+</small>
+
+<div class="columns tiny">
+
+| `Both` possible values | Count |
+| :---- | ---: |
+| `BothAtTheSameTime BZero TZero` | 1 |
+| `BothAtTheSameTime BZero TOne` | 2 |
+| `BothAtTheSameTime BZero TTwo` | 3 |
+| `BothAtTheSameTime BOne TZero` | 4 |
+| `BothAtTheSameTime BOne TOne` | 5 |
+| `BothAtTheSameTime BOne TTwo` | 6 |
+
+| `Either` possible values | Count |
+| :---- | ---: |
+| `JustBinary BZero` | 1 |
+| `JustBinary BOne` | 2 |
+| `JustTrinary TZero` | 3 |
+| `JustTrinary TOne` | 4 |
+| `JustTrinary TTwo` | 5 |
+
+</div>
 
 ---
 
-![bg left:60% 80%](./8080.png)
+# We O.K.?
 
-## Trivial CPU
+---
+
+# We O.K.?
+
+## Cool.
+
+---
+
+# Play Around with the REPL
+
+Showcase Basic Operations, Building Objects and Arrays, Methods on Objects
+
+Show Some Basic Rust and Haskell Code
+
+---
+
+## Object-Oriented Programming
+
+- **"Objects"** 
+    - Contain Mutable Data (like a Struct)
+    - Contain **"Methods"** (actions / functions) that affect its Data
+- **"Classes"** Defines Types of Objects
+- **"Instances"** Are the Objects Themselves
+
+```cpp
+x = new Foo();
+x.runSomeMethod();
+subData = x.accessSomeField;
+```
+
+---
+
+## Lambda Calculus
+
+<small>
+
+Way of Writing Functions Short-Hand
+
+
+$$ \lambda x. x + 5 $$
+
+```js
+function add5(x) {
+  return x + 5;
+}
+```
+
+Higher-Order Functions
+
+</small>
+
+$$ \lambda f x. f(x) $$
+
+> Give me a function and a value and I'll apply that function to the value
+
+---
+
+## Lambda Calculus
+
+<small>
+
+Way of Writing Functions Short-Hand
+
+$$ \lambda x. x + 5 $$
+
+```js
+function add5(x) {
+  return x + 5;
+}
+```
+
+Higher-Order Functions
+
+</small>
+
+$$ \lambda f x. f(x) $$
+$$ \lambda f x. f \space x $$
+
+---
+
+## Why Lambda Calculus?
+
+In $\lambda$, functions are treated as data - functions can be returned from functions, functions can be passed to functions
+
+Many programming languages' `function` keyword aren't lambdas, but they do support lambdas in different ways:
+
+- Rust and Ruby is `|x| x + 5`
+- JavaScript is `x => x + 5`
+- C++ is weird, idk how it works
+- Haskell uses lambdas natively
+
+---
+
+## Type Theory
+
+A fancy way of asking and finding out "what data type is this?"
+
+Rust:
+
+```rs
+fn foo(x: i32) -> bool {
+  //...
+}
+```
+
+TypeScript:
+
+```ts
+function foo(x: number) -> boolean {
+  // ...
+}
+```
+
+---
+
+## Type Theory
+
+Untyped Lambda Calculus
+
+$$ \lambda x. x + 5 $$
+
+Simply Typed Lambda Calculus
+
+$$ \lambda x: Number. x + 5 $$
+
+---
+
+## Type Theory
+
+Untyped Lambda Calculus
+
+$$ \lambda x. x + 5 $$
+
+Simply Typed Lambda Calculus
+
+$$ \lambda x: Number. x + 5 $$
+$$ f := \lambda x: Number. x + 5 $$
+
+---
+
+## Type Theory
+
+Untyped Lambda Calculus
+
+$$ \lambda x. x + 5 $$
+
+Simply Typed Lambda Calculus
+
+$$ \lambda x: Number. x + 5 $$
+$$ (\lambda x: Number. x + 5) : Number \rightarrow Number $$
+$$ f := \lambda x: Number. x + 5 $$
+$$ f : Number \rightarrow Number $$
+
+---
+
+## Type Theory
+
+Generic Types - Type Variables
+
+$$ g := \lambda x. x $$
+
+What is the type of $g$?
+
+---
+
+## Type Theory
+
+Generic Types - Type Variables
+
+$$ g := \lambda x: \alpha. x $$
+
+What is the type of $g$?
+
+---
+
+## Type Theory
+
+Generic Types - Type Variables
+
+$$ g := \lambda x: \alpha. x $$
+
+What is the type of $g$?
+
+$$ g : \alpha \rightarrow \alpha $$
+
+---
+
+## Type Theory
+
+Generic Types - Type Variables
+
+$$ g := \lambda x: \alpha. x $$
+
+What is the type of $g$?
+
+$$ g : \alpha \rightarrow \alpha $$
+
+$\alpha$ is a _type variable_
+
+---
+
+## Type Theory
+
+Generic Types - Type Variables
+
+$$ g := \lambda x: \alpha. x $$
+
+What is the type of $g$?
+
+$$ g : \alpha \rightarrow \alpha $$
+
+$\alpha$ is a _type variable_ - doesn't that mean we should introduce it with a lambda?
+
+---
+
+## Type Theory
+
+Generic Types - Type Variables
+
+$$ g := \forall \alpha. \lambda x: \alpha. x $$
+
+What is the type of $g$?
+
+$$ g : \forall \alpha. \alpha \rightarrow \alpha $$
+
+$\alpha$ is a _type variable_ - doesn't that mean we should introduce it with a lambda?
+
+---
+
+## Type Theory
+
+Generic Types - Type Variables
+
+$$ g := \forall \alpha. \lambda x: \alpha. x $$
+
+What is the type of $g$?
+
+$$ g : \forall \alpha. \alpha \rightarrow \alpha $$
+
+$\alpha$ is a _type variable_ - doesn't that mean we should introduce it with a lambda?
+
+```hs
+g :: forall a. a -> a
+g x = x
+```
 
 ---
 
@@ -627,30 +634,11 @@ $$ Acc \leftarrow M[MAR] $$
 
 ---
 
-## Modern CPUs and other Processing Units
+## Further Information
 
-- Stack Pointers and Function Calls
-- Cache Tiers (L1, L2, L3)
-- In-Register ALUs (GPUs, FPUs, TPUs)
-- Reduced Instruction Sets vs. Complex Instruction Sets (RISC/CISC)
-- Pipelines and Superscalar Architecture
-- Branch Prediction
-- Multi-Thread, Multi-Core, Multi-Processor
-
-## Implications of Operating Systems
-
-- Time Sharing, Context Switching, and Process Schedulers
-- Exception Handling
-- Interrupt Requests and Networking
-- Memory Management
-
----
-
-## Video Series
-
-- National Programme on Technology Enhanced Learning (NPTEL) from the Indian Institute of Technology (IIT) - Computer Organization
-
-https://youtu.be/TH9nd-KdVHs?si=uPrWyvIMouTiMRs9
+- There is so much further information, literally just google anything about the language you want to learn
+- Almost every language has their documentation online for free
+- People compete with each other like influencers to make information more available
 
 ---
 
@@ -658,9 +646,9 @@ https://youtu.be/TH9nd-KdVHs?si=uPrWyvIMouTiMRs9
 
 ![bg left:30% 80%](./qr.png)
 
-> CPUs are machines - its fuel are instructions, which are just data, and it produces and manipulates data.
+> Good programmers are good at writing programs. Great programmers are good at designing programs. The best programmers are mathematicians.
 
-Slides are available at [github.com/athanclark/usmc-presentation-cpu-arch-20251211](https://github.com/athanclark/usmc-presentation-cpu-arch-20251211)
+Slides are available at [github.com/athanclark/usmc-presentation-programming-20251218](https://github.com/athanclark/usmc-presentation-programming-20251218)
 
 ---
 
@@ -668,10 +656,12 @@ Slides are available at [github.com/athanclark/usmc-presentation-cpu-arch-202512
 
 1. Proxmox Virtualization System
     - great for home labs
-2. Intoduction to Programming
-    - wavetops, but it's a typhoon
-4. Abstract Algebra
+2. Abstract Algebra
     - don't be afraid
+3. Shells
+    - 🐚
+4. GNU/Linux
+    - This one won't get you anywhere, but you'll be able to say that you were made aware of some things
 
 ---
 
