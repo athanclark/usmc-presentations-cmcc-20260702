@@ -20,11 +20,11 @@ style: |
 
 ![bg left:40% 80%](./3nb.png)
 
-# Introduction to Programming
+# Introduction to Shells
 
 SSgt Clark, Athan L
 
-_Presented on 20251218_
+_Presented on 20251223_
 
 ---
 
@@ -44,132 +44,213 @@ Platoon Sergeant
 
 ## Outline
 
-<div class="columns">
-<div>
+<small>
 
 1. Introduction
-2. Data and Actions
-3. Basic Operations
-4. Principle of Organization
-5. Functions
-6. Paradigms and Semantics
+2. Why Shells Exist
+2. UNIX Shells
+    1. Paradigm
+    2. Environment Variables
+    3. Commands and Executables
+    4. Processes and Initialization
+    5. Jobs
+    6. Pipes and File Descriptors
+3. 
 
-</div>
-<div>
-
-7. Composition of Data
-8. Algebraic Data Types
-9. Objects and OOP
-10. Lambda Calculus
-11. Type Theory
-12. Conclusion
-
-</div>
-</div>
+</small>
 
 ---
 
 ## Introduction
 
-![bg left:40% 80%](./dude.jpg)
+> The shell is the user’s programming language.
 
-> Programming is the act of designing a system that runs on another system designed to run systems.
+— Rob Pike
 
-— Me
+> The UNIX shell is a programming language in which commands are first-class objects.
 
----
-
-## Data and Actions
-
-Data = "Subject Matter"
-Actions = "What I'm Doing With It"
-
-```graphviz
-digraph G {
-  rankdir=LR;
-  A -> B [label="F"];
-  A -> A [label="G"];
-}
-```
-
-General Ideas
-
-- Data is inert
-- Actions typically create data as a result
-- Effects - Actions that affect data other than the _subject matter_
+— Brian Kernighan
 
 ---
 
-## Basic Operations
+![bg left:40% 100%](./user-space.png)
 
-Typically "Built-In" to the programming langauge
-$\quad \hookrightarrow$ a globally available "context" when desigining a program
+## Why Shells Exist
+
+O/S Kernel Manages Execution of Processes
+- Makes the Hardware actually do things
+- Processes ask the Kernel to do things through System Calls
+- How do I start a new process?
+
+---
+
+![bg left:50% 100%](./init-tree.jpg)
+
+## Why Shells Exist
+
+Processes can start new processes with `fork()`
+
+- All starts with `init` processes on boot
+- Typically starts login program, which starts interactive system (shell)
+- Shell is a general-purpose process that can start arbitrary processes
+
+---
+
+## Why Shells Exist
+
+Called a "shell" because it wraps the kernel (kinda)
+
+Shell interaction via a _terminal_, commonly as a _tele-type_ (TTY)
+
+Most shells support scripting - repeatable interactions captured in a file, interpreted by the shell program
+
+O/S User Interfaces are "Graphical Shells"
+
+---
+
+## UNIX Shells
+
+![bg left:40% 80%](./unix.jpeg)
+
+UNIX Philosophy - a program should do one thing and do it well, and should work well with other programs
+
+Shells employ these programs together to accomplish tasks
+
+---
+
+## UNIX Shells - Paradigm
+
+- A process is a running program, started by a command
+- Commands are just executable files
+- Parameters can be passed to commands on their invocation
+- Processes can use its environment for context
+- Environments are Inherited by Sub-Processes
+- Processes are started by a user and group, inherit those permissions
+- Processes have a standard input, standard output, and standard error, each as streams of text
+
+---
+
+## UNIX Shells - Paradigm
+
+- A "shell" can mean a specific implementation of a shell (BASH, KSH, FISH), or a running process of a specific implementation
+    - i.e., "This shell supports background jobs while this one doesn't" vs. "Open up a new shell"
+- A shell is a process that can start arbitrary processes
+- A shell has a _current working directory_ location in the filesystem
+- A shell is operated by a user and group, which the processes it starts inherits
+- A shell can send signals to processes (`Ctrl^C` for SIGINT, `Ctrl^D` for EOF, `kill`, etc.)
+
+---
+
+## UNIX Shells - Environment Variables
 
 <small>
 
-| Data Types | Operations Supported |
-| :-------   | ------------: |
-| Numbers | Arithmetic, Trigonometry, Comparison |
-| Booleans | Logic |
-| Strings | Find-and-Replace, Concatenate/Append, "to lower" / "to upper" |
-| Arrays | Same as strings except ambiguous, "Mapping", "Reduce" |
-| Tuples | Mapping over Specific Position |
-| Most | Equality |
+Automatically passed to child processes
+
+```sh
+SOME_VARIABLE="foo"
+echo $SOME_VARIABLE
+```
+
+Use of `$` in an expression _dereferences_ the varaible
+
+Use of `env` command displays all ENVVARs. Important variables:
+
+| Variable | Use |
+| :---- | :---- |
+| $HOME | Location of current user's home directory |
+| $PWD | Current working directory of the shell |
+| $PATH | Location of searchable directories for finding a command |
 
 </small>
 
 ---
 
-## Principle of Organization
+## UNIX Shells - Commands
 
-1. Doing a lot of different things can get complicated
-2. Organize the actions into sub-actions, group data together
-3. Make sure the sub-actions and groups are _"modular"_
-4. Modular actions and data groups can now be used as built-ins
+Some commands are built-in to a shell (i.e. `cd` for change directory), others are outsourced
 
-Programmers build tools to write programs, they extend and control their **context**
+Shell uses `$PATH` to search for the executable of a command - `which <some_command>` tells you where that exectuable is
 
-- Is not "endless" - there is an end-state of a "product"
+When the shell runs a command, it actually forks its processes, and assigns that executable as the process's code to the Kernel - it's now the Kernel's problem
+
+Shell will pause execution until command completes
 
 ---
 
-## Functions
+## UNIX Shells - Processes
 
-Means different things in different programming paradigms
+- Process #1 is `init` when system boots
+    - Starts all other essential processes to make operating system useful
+- Processes `fork` other processes in order to run new programs
+- All of this is inspectable with `htop` (basically task manager)
+- Some processes can have priority systems for execution, some kernels support real-time (RT) execution (mandatory time scheduling)
+- Each process has an owner, a working directory, and an environment
 
-- Procedure captured over variables
-- Generalized over inputs that remain ambiguous
-- Can return results
+---
+
+## UNIX Shells - Jobs
+
+Usually where shells differ the most, outside of syntax
+
+A process can receive a signal (`Ctrl^Z`) that pauses its execution and return to the shell. The shell can choose to continue its execution in the background or foreground.
+
+- It gets a little tricky when redirecting its file descriptors
+
+Some shells (ksh, mksh) support multiple parallel job scheduling
+
+---
+
+## UNIX Shells - File Descriptors
+
+<small>
+
+Kernel gives each process a Standard Input, Standard Output, and Standard Error (STDIN, STDOUT, STDERR)
+
+If process is bound to a terminal, the STDIN comes from the keyboard, and STDOUT/STDERR go to the terminal screen - example:
 
 ```hs
-square :: Number -> Number
-square x = x * x
+main :: IO ()
+main = do
+  theInput <- getLine -- from stdin
+  putStrLn ("This was what you input: " ++ theInput) -- to stdout
 ```
 
-```ts
-function square(x: number) -> number {
-  return x * x;
-}
+</small>
+
+---
+
+## UNIX Shells - Pipes
+
+Plumbs one command's STDOUT to another command's STDIN
+
+```sh
+going_out | coming_in
+```
+
+Typically see chains of operations
+
+```sh
+outputs_a_lot_of_text | grep "^some_search_expression$" | sort | head
 ```
 
 ---
 
-## Paradigms and Semantics
+## UNIX Shells - Pipes
 
-<small>
+`cat` outputs all of a file's contents to STDOUT
 
-- **"Mutable"** Data - variables that can have their contents mutated / changed
-- **"Pure"** Functions - functions that don't cause side-effects
-- **"Imperative"** vs. **"Functional"** - sequence of steps vs. composition of results
-- **"Compiled"** vs. **"Interpreted"** - CPU executes the program via translation ahead of time, or just-in-time translation via an _interpreter_
+```sh
+cat somebigfile.txt
+```
 
-</small>
+Also outputs whatever's plumbed into its STDIN
 
-### Types of Data
+```sh
+echo "this will get repeated" | cat
+```
 
-- Object-Oriented, Mutable Objects that Contain Methods
-- Algebraic Data Types, Separate Enumerations and Structures
-- Inheritance, Traits, Generics - Means By Which Code Is Shared
+`|` and `cat` form a monoid over process inputs and outputs
 
 ---
 
@@ -183,194 +264,136 @@ function square(x: number) -> number {
 
 ---
 
-# Install VSCode
+# Are We Good?
 
-[code.visualstudio.com](code.visualstudio.com)
+## Cool.
 
----
-
-# Install Node.js
-
-1. Install NVM-Windows: [github.com/coreybutler/nvm-windows](github.com/coreybutler/nvm-windows)
-2. Open PowerShell
-3. Verify NVM is installed: `nvm`
-4. Install a Long-Term Support Node.js: `nvm install lts`
-5. Verify Node.js is installed: `node --version`
+### Run through UNIX Shells again for good measure
 
 ---
 
-## JavaScript
+![bg left:50% 100%](./cronenberg.webp)
 
-- Mutable
-- Impure
-- Imperative
-- Interpreted
-- Object-Oriented
-- Inheritance
-
-It's widely available (all browsers support it)
-
----
-
-## Composition of Data
-
-- Data "Contained" Within other _Structures_
-- Data that "Inherits" Functionality or Features
-
-### Typical Methods of Encapsulation
-
-- Struct - Tuples
-- Enum - "Either $X$ or $Y$" - must be only 1
-- "$X$ is a Number" $\implies$ "$X$ supports Arithmetic Operations"
-
----
-
-## Algebraic Data Types
-
-Structure / Struct:
+## Cons of UNIX Shells
 
 <small>
 
-<div class="columns">
-
-<div>
-
-Rust:
-
-```rs
-struct Foo {
-  field_one: i32,
-  field_two: String,
-}
-```
-
-TypeScript:
-
-```ts
-type Foo = {
-  fieldOne: number,
-  fieldTwo: string,
-}
-```
-
-</div>
-
-<div>
-
-Haskell:
-
-```hs
-data Foo = Foo {
-  fieldOne :: Integer,
-  fieldTwo :: String,
-}
-```
-
-OOP:
-
-```cpp
-class Foo {
-  int fieldOne;
-  char[] fieldTwo;
-}
-```
-
-</div>
-
-</div>
+- Modern UNIX ecosystem is a Cronenberg of disorganized individuality
+- STDIN/STDOUT data is restricted to Strings
+- Safe translation of piped data to command arguments typically requires a parsing system like `awk` or `perl`, or you're better off writing a script in Python or something.
 
 </small>
 
 ---
 
-## Algebraic Data Types
+## PowerShell
 
-Enumeration / Enum:
+Microsoft's Answer to the Constant Criticism of DOS Command Prompt
 
-<small>
+Still Microsoft in-nature (🤮)
 
-<div class="columns">
+- .NET / C# syntax (caps convention, caps insensitive)
+- Restricted to Commands (Cmdlets) written in C# / .NET
+- No robust job support
+- Needed to invent new syntax to make up for conflicts with other systems
 
-<div>
+---
 
-Rust:
+## PowerShell
 
-```rs
-enum Bar {
-  OnePossibility(i32),
-  OtherPossibility(String),
-  YetAnotherPossibility,
+Things it did right
+
+- _Verb_-_Noun_ Syntax
+- Structured data between pipes (.NET objects)
+- Object field extraction for arguments (no crazy `xargs`, `perl`, `awk` necessary)
+- Each command takes one object at-a-time, no batch paging of text
+- Integrated manual (better than UNIX `man` pages)
+- Installed on every Windows O/S
+
+---
+
+## Review - What is an Object?
+
+"Classical" OOP
+
+```csharp
+public class UserInfo
+{
+  // properties (things that hold data)
+  public string Name {get; set;}
+  public int Age {get; set;}
+  // byproducts of properties
+  public bool IsAdult => Age >= 18;
+  // methods - functions that act on the object
+  public override string ToString()
+  {
+    return $"{Name} ({Age})";
+  }
 }
 ```
 
-</div>
+---
 
-<div>
+## Review - What is an Object?
 
-Haskell:
+```csharp
+$user = new UserInfo {
+  Name = "Clark",
+  Age = 33
+}
 
-```hs
-data Bar
-  = OnePossibility Integer
-  | OtherPossibility String
-  | YetAnotherPossibility
+$user.IsAdult // True
+$user.ToString() // Clark (33)
 ```
 
-</div>
+---
 
-</div>
+## What Does This Imply?
 
-A `Bar` must be either a `OnePossibility` holding a `i32`/`Integer`, a `OtherPossibility` holding a `String`, or a `YetAnotherPossibility`, which doesn't hold anything.
+- Objects Are Rich Collections of Data
+- Each Data Component is Explicitly _Typed_
 
-</small>
+This means that you can't put a sqare peg in a round hole, and it's much easier to find the specific peg that you need
 
 ---
 
-## Why "Algebraic"?
-
-- Struct = Product
-- Enum = Sum
-
-Think about the space of possible values a data type defines - a tuple or a struct multipies the total number of possible values, while an enum just adds them together
-
-- Example: Bit Depth - $2^n$ number of possiblities as `n` grows larger. If it's 2 bits, then it's $2 \times 2$
-
----
-
-## Why "Algebraic"?
+## What Does This Imply?
 
 <small>
 
-```hs
-data Binary = BZero | BOne -- total possible values = 2
-data Trinary = TZero | TOne | TTwo -- total possible values = 3
+Commands in PowerShell have to be written in C# / .NET, which makes them compliant to their data type paradigm
 
-data BothAtTheSameTime = BothAtTheSameTime Binary Trinary
-data EitherOneOrTheOther = JustBinary Binary | JustTrinary Trinary
+This allows commands to share typed data between each other, and make that information inspectable at runtime
+
+```pwsh
+Get-Help <some cmdlet>
+```
+
+```pwsh
+Get-Help <some cmdlet> -Examples
+```
+
+```pwsh
+Get-Help <some cmdlet> -Detailed
+```
+
+```pwsh
+Get-Help <some cmdlet> -Property <some argument to that cmdlet>
 ```
 
 </small>
 
-<div class="columns tiny">
+---
 
-| `Both` possible values | Count |
-| :---- | ---: |
-| `BothAtTheSameTime BZero TZero` | 1 |
-| `BothAtTheSameTime BZero TOne` | 2 |
-| `BothAtTheSameTime BZero TTwo` | 3 |
-| `BothAtTheSameTime BOne TZero` | 4 |
-| `BothAtTheSameTime BOne TOne` | 5 |
-| `BothAtTheSameTime BOne TTwo` | 6 |
+## What Does This Imply?
 
-| `Either` possible values | Count |
-| :---- | ---: |
-| `JustBinary BZero` | 1 |
-| `JustBinary BOne` | 2 |
-| `JustTrinary TZero` | 3 |
-| `JustTrinary TOne` | 4 |
-| `JustTrinary TTwo` | 5 |
+Searching, Filtering, etc. is not just on text, but on the objects themselves
 
-</div>
+```pwsh
+Get-Process | Where-Object CPU -gt 100
+```
+
+`Get-Process` returns objects that have the `CPU` property - we refine the results to include only objects that have their `CPU` property with a value greater than `100`.
 
 ---
 
@@ -384,243 +407,74 @@ data EitherOneOrTheOther = JustBinary Binary | JustTrinary Trinary
 
 ---
 
-# Play Around with the REPL
+## Pipe Objects as Arguments
 
-Showcase Basic Operations, Building Objects and Arrays, Methods on Objects
+Say I have one command that returns objects that have a `Foo` property, which is a string:
 
-Show Some Basic Rust and Haskell Code
+```powershell
+Get-Foos
 
+Foo
 ---
-
-## Object-Oriented Programming
-
-- **"Objects"** 
-    - Contain Mutable Data (like a Struct)
-    - Contain **"Methods"** (actions / functions) that affect its Data
-- **"Classes"** Defines Types of Objects
-- **"Instances"** Are the Objects Themselves
-
-```cpp
-x = new Foo();
-x.runSomeMethod();
-subData = x.accessSomeField;
+abc
+def
+ghi
+...
 ```
 
 ---
 
-## Lambda Calculus
+## Pipe Objects as Arguments
 
-<small>
+Now, say I have a command that takes as an argument, `-Foo`, which accepts a string:
 
-Way of Writing Functions Short-Hand
+```powershell
+Get-Help Do-Thing -Parameter Foo
 
+-Foo [<System.String>]
+```
 
-$$ \lambda x. x + 5 $$
+---
 
-```js
-function add5(x) {
-  return x + 5;
+## Pipe Objects as Arguments
+
+`Get-Foos` can be directly piped into `Do-Thing`, with no other coordination.
+
+```powershell
+Get-Foos | Do-Thing
+```
+
+---
+
+## Pipe Objects as Arguments
+
+You can also use a `ForEach-Object` loop if the names do not match up, but you want precise control:
+
+```powershell
+Get-Foos | ForEach-Object {
+  Run-Some-Command -NotFoo $_.Foo
 }
 ```
 
-Higher-Order Functions
-
-</small>
-
-$$ \lambda f x. f(x) $$
-
-> Give me a function and a value and I'll apply that function to the value
+`$_` references the object being looped over.
 
 ---
 
-## Lambda Calculus
+## Pipe Objects as Arguments
 
-<small>
+If you want, you can turn the value into a string, but this isn't recommended because it removes the type information and makes it the same as UNIX:
 
-Way of Writing Functions Short-Hand
-
-$$ \lambda x. x + 5 $$
-
-```js
-function add5(x) {
-  return x + 5;
-}
+```powershell
+Get-Foos | Select-Object -ExpandProperty Foo | Run-Some-Command -NotFoo
 ```
 
-Higher-Order Functions
-
-</small>
-
-$$ \lambda f x. f(x) $$
-$$ \lambda f x. f \space x $$
+This will assume that the _next position_ in `Run-Some-Command -NotFoo` is where the data goes (just a string)
 
 ---
 
-## Why Lambda Calculus?
+## Pipe Objects as Arguments
 
-In $\lambda$, functions are treated as data - functions can be returned from functions, functions can be passed to functions
-
-Many programming languages' `function` keyword aren't lambdas, but they do support lambdas in different ways:
-
-- Rust and Ruby is `|x| x + 5`
-- JavaScript is `x => x + 5`
-- C++ is weird, idk how it works
-- Haskell uses lambdas natively
-
----
-
-## Type Theory
-
-A fancy way of asking and finding out "what data type is this?"
-
-Rust:
-
-```rs
-fn foo(x: i32) -> bool {
-  //...
-}
-```
-
-TypeScript:
-
-```ts
-function foo(x: number) -> boolean {
-  // ...
-}
-```
-
----
-
-## Type Theory
-
-Untyped Lambda Calculus
-
-$$ \lambda x. x + 5 $$
-
-Simply Typed Lambda Calculus
-
-$$ \lambda x: Number. x + 5 $$
-
----
-
-## Type Theory
-
-Untyped Lambda Calculus
-
-$$ \lambda x. x + 5 $$
-
-Simply Typed Lambda Calculus
-
-$$ \lambda x: Number. x + 5 $$
-$$ f := \lambda x: Number. x + 5 $$
-
----
-
-## Type Theory
-
-Untyped Lambda Calculus
-
-$$ \lambda x. x + 5 $$
-
-Simply Typed Lambda Calculus
-
-$$ \lambda x: Number. x + 5 $$
-$$ (\lambda x: Number. x + 5) : Number \rightarrow Number $$
-$$ f := \lambda x: Number. x + 5 $$
-$$ f : Number \rightarrow Number $$
-
----
-
-## Type Theory
-
-Generic Types - Type Variables
-
-$$ g := \lambda x. x $$
-
-What is the type of $g$?
-
----
-
-## Type Theory
-
-Generic Types - Type Variables
-
-$$ g := \lambda x: \alpha. x $$
-
-What is the type of $g$?
-
----
-
-## Type Theory
-
-Generic Types - Type Variables
-
-$$ g := \lambda x: \alpha. x $$
-
-What is the type of $g$?
-
-$$ g : \alpha \rightarrow \alpha $$
-
----
-
-## Type Theory
-
-Generic Types - Type Variables
-
-$$ g := \lambda x: \alpha. x $$
-
-What is the type of $g$?
-
-$$ g : \alpha \rightarrow \alpha $$
-
-$\alpha$ is a _type variable_
-
----
-
-## Type Theory
-
-Generic Types - Type Variables
-
-$$ g := \lambda x: \alpha. x $$
-
-What is the type of $g$?
-
-$$ g : \alpha \rightarrow \alpha $$
-
-$\alpha$ is a _type variable_ - doesn't that mean we should introduce it with a lambda?
-
----
-
-## Type Theory
-
-Generic Types - Type Variables
-
-$$ g := \forall \alpha. \lambda x: \alpha. x $$
-
-What is the type of $g$?
-
-$$ g : \forall \alpha. \alpha \rightarrow \alpha $$
-
-$\alpha$ is a _type variable_ - doesn't that mean we should introduce it with a lambda?
-
----
-
-## Type Theory
-
-Generic Types - Type Variables
-
-$$ g := \forall \alpha. \lambda x: \alpha. x $$
-
-What is the type of $g$?
-
-$$ g : \forall \alpha. \alpha \rightarrow \alpha $$
-
-$\alpha$ is a _type variable_ - doesn't that mean we should introduce it with a lambda?
-
-```hs
-g :: forall a. a -> a
-g x = x
-```
+PowerShell almost never uses `stdin` or `stdout` - the pipe system / argument positioning is the primary mechanism for information sharing.
 
 ---
 
@@ -634,11 +488,12 @@ g x = x
 
 ---
 
-## Further Information
+## Honorable Mentions
 
-- There is so much further information, literally just google anything about the language you want to learn
-- Almost every language has their documentation online for free
-- People compete with each other like influencers to make information more available
+- `ksh` is used as the default shell for OpenBSD (used in a lot of Networking equipment)
+- `nushell` has structured data like PowerShell, but isn't plagued by the scourge that is Microsoft
+- `fish` friendly, interactive shell - useful for getting help while using a shell
+- `zsh` extremely extensible
 
 ---
 
@@ -646,9 +501,9 @@ g x = x
 
 ![bg left:30% 80%](./qr.png)
 
-> Good programmers are good at writing programs. Great programmers are good at designing programs. The best programmers are mathematicians.
+> Shells are a means to interact with and control a computer in a way that can be automated.
 
-Slides are available at [github.com/athanclark/usmc-presentation-programming-20251218](https://github.com/athanclark/usmc-presentation-programming-20251218)
+Slides are available at [github.com/athanclark/usmc-presentation-shells-20251230](https://github.com/athanclark/usmc-presentation-shells-20251230)
 
 ---
 
@@ -656,10 +511,10 @@ Slides are available at [github.com/athanclark/usmc-presentation-programming-202
 
 1. Proxmox Virtualization System
     - great for home labs
-2. Abstract Algebra
-    - don't be afraid
-3. Shells
-    - 🐚
+2. Haskell
+    - drink the kool-aid
+3. Cryptography
+    - Ḣ̯ͦ͜ͅi̿ͦ͗̚͢d̨͍̦ͤ͘e̖̭̋̍̿ ̴̙̤ͣ̈́y̷̏ͬ͢͞o̯̯ͫͫ̏u͇̱͊ͨ͡r͖̜͈̿͘ ͉̆̋̋̒s̫͌͘͘͞ĕ̸̸͚̖ċ̶̓͆͘r̶̺̓ͬ͜e͖̼ͯ̿̽t͖ͤͪ̂͑s̭ͨͥͧ͟ ͍̳ͩ̀̊i̞̠̘̎̏n̷̙̣̤̔ ̲̃͑̓͑p҉͉̜̆ͩl̷ͭ̉͋̆a̸̢̡͆̐i͍̎̽͋͞ṇ̡̘̝͟ ̹̇̅́͝s̥ͤ͋͢͠i̥̯̾͆ͬg̣̓̐̌̕h͓͖̰̅̌t͎̮̘ͥ͘
 4. GNU/Linux
     - This one won't get you anywhere, but you'll be able to say that you were made aware of some things
 
