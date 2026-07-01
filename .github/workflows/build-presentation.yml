@@ -1,0 +1,84 @@
+name: Build presentation
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - 'v*'
+  pull_request:
+  workflow_dispatch:
+  release:
+    types:
+      - published
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Generate HTML and PDF
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || github.ref }}
+
+      - name: Generate presentation artifacts
+        run: |
+          set -euo pipefail
+
+          mkdir -p dist
+          chmod 0777 dist
+
+          docker run --rm \
+            --volume "$PWD:/home/marp/app" \
+            --workdir /home/marp/app \
+            marpteam/marp-cli:latest \
+            presentation.md \
+            --html \
+            --allow-local-files \
+            --engine ./engine.js \
+            --output dist/cmcc-20260702.html
+
+          docker run --rm \
+            --volume "$PWD:/home/marp/app" \
+            --workdir /home/marp/app \
+            marpteam/marp-cli:latest \
+            presentation.md \
+            --pdf \
+            --allow-local-files \
+            --engine ./engine.js \
+            --output dist/cmcc-20260702.pdf
+
+          ls -lh dist
+
+      - name: Upload workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cmcc-20260702-presentation
+          path: |
+            dist/cmcc-20260702.html
+            dist/cmcc-20260702.pdf
+          if-no-files-found: error
+
+      - name: Attach artifacts to GitHub release
+        if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_NAME: ${{ github.event.release.tag_name || github.ref_name }}
+        run: |
+          set -euo pipefail
+
+          if ! gh release view "$TAG_NAME" >/dev/null 2>&1; then
+            gh release create "$TAG_NAME" \
+              --title "$TAG_NAME" \
+              --notes "Automated presentation release for $TAG_NAME."
+          fi
+
+          gh release upload "$TAG_NAME" \
+            dist/cmcc-20260702.html \
+            dist/cmcc-20260702.pdf \
+            --clobber
