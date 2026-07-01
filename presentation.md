@@ -5,6 +5,42 @@ paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 style: |
+  section {
+    font-size: 22px;
+    line-height: 1.22;
+    padding: 44px 70px;
+  }
+  section.lead {
+    font-size: 24px;
+  }
+  section h1 {
+    font-size: 1.65em;
+    line-height: 1.08;
+    margin: 0 0 0.35em 0;
+  }
+  section h2 {
+    font-size: 1.25em;
+    line-height: 1.12;
+    margin: 0.25em 0 0.5em 0;
+  }
+  section p,
+  section ul,
+  section ol,
+  section blockquote,
+  section table {
+    margin-top: 0.45em;
+    margin-bottom: 0.45em;
+  }
+  section li {
+    margin-top: 0.16em;
+    margin-bottom: 0.16em;
+  }
+  section table {
+    font-size: 0.82em;
+  }
+  section sup {
+    font-size: 0.65em;
+  }
   .columns {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -14,8 +50,16 @@ style: |
     width: 100em;
   }
   .tiny {
-    font-size: 11pt;
+    font-size: 12px;
+    line-height: 1.15;
     word-break: break-word;
+  }
+  .tiny h1 {
+    font-size: 1.45em;
+  }
+  .tiny p {
+    margin-top: 0.35em;
+    margin-bottom: 0.35em;
   }
 ---
 
@@ -524,7 +568,7 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (1/3)
+# References (1/9)
 
 <a id="ref-1"></a>[1]: Department of the Navy, Headquarters Marine Corps, *Marine Corps Order 5510.18B: United States Marine Corps Information and Personnel Security Program*, January 30, 2017, chap. 1, para. 3.c. Official publication page: <https://www.marines.mil/News/Publications/MCPEL/Electronic-Library-Display/Article/1065115/mco-551018b/>. PDF: <https://www.marines.mil/portals/1/Publications/MCO%205510.18B.pdf>.
 
@@ -532,11 +576,23 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <a id="ref-3"></a>[3]: National Institute of Standards and Technology, Computer Security Resource Center, “Communications Security,” glossary entry citing CNSSI 4009-2015 and CNSSI 4005. <https://csrc.nist.gov/glossary/term/communications_security>.
 
+---
+
+<!-- _class: tiny -->
+
+# References (2/9)
+
 <a id="ref-4"></a>[4]: National Institute of Standards and Technology, Computer Security Resource Center, “COMSEC Material,” glossary entry. <https://csrc.nist.gov/glossary/term/comsec_material>.
 
 <a id="ref-5"></a>[5]: National Institute of Standards and Technology, Computer Security Resource Center, “COMSEC Material Control System,” glossary entry. <https://csrc.nist.gov/glossary/term/comsec_material_control_system>.
 
 <a id="ref-6"></a>[6]: National Institute of Standards and Technology, Computer Security Resource Center, “Key Management Infrastructure,” glossary entry citing CNSSI 4009-2015 and CNSSI 4005. <https://csrc.nist.gov/glossary/term/key_management_infrastructure>.
+
+---
+
+<!-- _class: tiny -->
+
+# References (3/9)
 
 <a id="ref-7"></a>[7]: National Institute of Standards and Technology, Computer Security Resource Center, “KMI Operating Account,” glossary entry citing CNSSI 4009-2015. <https://csrc.nist.gov/glossary/term/kmi_operating_account>.
 
@@ -548,7 +604,7 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (2/3)
+# References (4/9)
 
 <a id="ref-10"></a>[10]: Washington Headquarters Services, Executive Services Directorate, “SD 572: Cryptographic Access Certification and Termination,” edition date June 1, 2000. <https://www.esd.whs.mil/Directives/forms/sd_forms/SD572/>.
 
@@ -556,11 +612,23 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <a id="ref-12"></a>[12]: Department of Defense, *DoDM 5200.01, Volume 3*, encl. 2, sec. 3. <https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520001m_vol3.pdf>.
 
+---
+
+<!-- _class: tiny -->
+
+# References (5/9)
+
 <a id="ref-13"></a>[13]: Department of Defense, *DoDM 5200.01, Volume 3*, encl. 2, sec. 3, <https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520001m_vol3.pdf>; 32 C.F.R. § 117.21(f), <https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-D/part-117/section-117.21>.
 
 <a id="ref-14"></a>[14]: 32 C.F.R. § 117.21(f)(2)–(4), <https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-D/part-117/section-117.21>; Washington Headquarters Services, “SD 572,” <https://www.esd.whs.mil/Directives/forms/sd_forms/SD572/>.
 
 <a id="ref-15"></a>[15]: Department of the Navy, Headquarters Marine Corps, *MCO 5510.18B*, chap. 4, para. 5.b. Official publication page: <https://www.marines.mil/News/Publications/MCPEL/Electronic-Library-Display/Article/1065115/mco-551018b/>. PDF: <https://www.marines.mil/portals/1/Publications/MCO%205510.18B.pdf>.
+
+---
+
+<!-- _class: tiny -->
+
+# References (6/9)
 
 <a id="ref-16"></a>[16]: Department of the Navy, Headquarters Marine Corps, *MCO 5510.18B*, chap. 4, para. 3. Official publication page: <https://www.marines.mil/News/Publications/MCPEL/Electronic-Library-Display/Article/1065115/mco-551018b/>. PDF: <https://www.marines.mil/portals/1/Publications/MCO%205510.18B.pdf>.
 
@@ -572,7 +640,7 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (3/3)
+# References (7/9)
 
 <a id="ref-19"></a>[19]: Department of Defense, *DoDM 5200.01, Volume 3*, encl. 4, secs. 10–11. <https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520001m_vol3.pdf>.
 
@@ -580,11 +648,23 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <a id="ref-21"></a>[21]: Department of Defense, *DoDM 5200.01, Volume 3*, encl. 4, sec. 12.c. <https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520001m_vol3.pdf>.
 
+---
+
+<!-- _class: tiny -->
+
+# References (8/9)
+
 <a id="ref-22"></a>[22]: Department of the Navy, Headquarters Marine Corps, *MCO 5510.18B*, chap. 4, para. 5.b–e. Official publication page: <https://www.marines.mil/News/Publications/MCPEL/Electronic-Library-Display/Article/1065115/mco-551018b/>. PDF: <https://www.marines.mil/portals/1/Publications/MCO%205510.18B.pdf>.
 
 <a id="ref-23"></a>[23]: Department of the Navy, Headquarters Marine Corps, *MCO 5510.18B*, chap. 4, para. 4.b.(3). Official publication page: <https://www.marines.mil/News/Publications/MCPEL/Electronic-Library-Display/Article/1065115/mco-551018b/>. PDF: <https://www.marines.mil/portals/1/Publications/MCO%205510.18B.pdf>.
 
 <a id="ref-24"></a>[24]: Department of the Navy, Headquarters Marine Corps, *MCO 5510.18B*, chap. 4, para. 5.b–d. Official publication page: <https://www.marines.mil/News/Publications/MCPEL/Electronic-Library-Display/Article/1065115/mco-551018b/>. PDF: <https://www.marines.mil/portals/1/Publications/MCO%205510.18B.pdf>.
+
+---
+
+<!-- _class: tiny -->
+
+# References (9/9)
 
 <a id="ref-25"></a>[25]: Department of Defense, *DoDM 5200.01, Volume 3*, encl. 3, sec. 3. <https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520001m_vol3.pdf>.
 
