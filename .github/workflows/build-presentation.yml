@@ -75,6 +75,10 @@ jobs:
           cp dist/cmcc-20260702.html site/index.html
           cp dist/cmcc-20260702.pdf site/cmcc-20260702.pdf
 
+          # Marp keeps local image references (for example ./3nb.png) as
+          # sibling assets in generated HTML, so publish those files too.
+          cp ./*.png site/
+
       - name: Configure GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/configure-pages@v5
