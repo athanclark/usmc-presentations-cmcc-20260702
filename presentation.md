@@ -573,7 +573,7 @@ Before releasing the asset back to the customer, confirm:<sup><a href="#ref-15">
 - 3NB temporary custody log is closed.
 - Customer inventory is updated.
 
-<div class="callout counter"><strong>Counter Example:</strong> a sloppy return can create a false record that hides loss, unauthorized access, or unresolved discrepancy.</div>
+<div class="callout deviation"><strong>Deviation Consequence:</strong> a sloppy return can create a false record that hides loss, unauthorized access, or unresolved discrepancy.</div>
 
 ---
 
@@ -594,17 +594,19 @@ These rules prevent most avoidable CMCC mistakes:
 
 Do not treat “this laptop is now SIPR” as an informal technician decision.
 
-Before a device is upclassed or accepted as SIPR/classified material:<sup><a href="#ref-16">[16]</a></sup><sup><a href="#ref-22">[22]</a></sup><sup><a href="#ref-28">[28]</a></sup>
+Before a chassis or hard drive is upclassed or accepted as SIPR/classified material:<sup><a href="#ref-16">[16]</a></sup><sup><a href="#ref-22">[22]</a></sup><sup><a href="#ref-28">[28]</a></sup>
 
 1. Security/CMCC authority approves the change and required storage path.
-2. Chassis, drive, and removable-media serials are physically verified.
-3. The device is marked for the resulting classification and caveats.
-4. The SF inventory/local classified-material inventory is updated from unclassified/property-only status to classified custody status.
-5. The CMCC control number is assigned or updated and tied to the property tag, chassis serial, and media serials.
+2. Supply/property chain of custody is validated from acquisition or transfer through current custodian.
+3. The system or media is scanned/inspected under the approved local technical procedure before SIPR connection or imaging.
+4. Chassis, drive, and removable-media serials are physically verified.
+5. The device is marked for the resulting classification and caveats.
+6. The SF inventory/local classified-material inventory is updated from unclassified/property-only status to classified custody status.
+7. The CMCC control number is tied to the property tag, chassis serial, media serials, and chain-of-custody package.
 
 Classified control measures apply to computers, hard drives, disks, documents, and other media containing classified information.<sup><a href="#ref-16">[16]</a></sup>
 
-<div class="callout counter"><strong>Counter Example:</strong> if the SF inventory says “unclassified laptop” but the CMCC record says “SIPR asset,” the command has an accountability mismatch.<sup><a href="#ref-22">[22]</a></sup></div>
+<div class="callout counter"><strong>Counter Example:</strong> if the scan package or supply custody trail is missing, the command may not know what was connected to SIPR or who controlled the media before upclassification.<sup><a href="#ref-22">[22]</a></sup></div>
 
 ---
 
