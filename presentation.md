@@ -101,15 +101,13 @@ Staff Sergeant Athan L Clark
 
 # Outline
 
-This deck moves in seven parts, from vocabulary to a full imaging workflow:
-
-1. **Foundations and Vocabulary** — the terms and control systems behind classified SIPR handling.
-2. **Authorization, Custody, and Records** — who may sign, how to validate them, and what records prove custody.
-3. **Moving Classified Assets** — courier, packaging, transport, and acceptance requirements.
-4. **Inventory and Accountability** — keeping both units' records true.
-5. **The 3NB Imaging Workflow** — the end-to-end scenario, from customer prep to return.
-6. **Severity, Checklists, and Everyday Rules** — consequences and quick-reference practice.
-7. **Special Handling and the Bottom Line** — upclassing, working notes, and stop-the-line judgment.
+1. **Foundations and Vocabulary**
+2. **Authorization, Custody, and Records**
+3. **Moving Classified Assets**
+4. **Inventory and Accountability**
+5. **The 3NB Imaging Workflow**
+6. **Severity, Checklists, and Everyday Rules**
+7. **Special Handling and the Bottom Line**
 
 ---
 
@@ -121,7 +119,7 @@ This deck moves in seven parts, from vocabulary to a full imaging workflow:
 
 # 1. Scope and Ground Rules
 
-This deck provides a **policy-level SOP model** for SIPR laptops, hard drives, removable media, and related classified/COMSEC material.
+This presentation provides a **policy-level SOP model** for SIPR laptops, hard drives, removable media, and related classified/COMSEC material.
 
 It does **not** replace:
 
@@ -223,7 +221,11 @@ Examples may include approved cryptographic devices, components, or modules that
 
 ---
 
-![sf-153](./sf-153.webp)
+![bg fit](./sf-153.webp)
+
+---
+
+![bg fit](./sd-572.webp)
 
 ---
 
