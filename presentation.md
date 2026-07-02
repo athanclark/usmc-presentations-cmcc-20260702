@@ -113,10 +113,7 @@ This deck moves in seven parts, from vocabulary to a full imaging workflow:
 
 <!-- _class: lead -->
 
-# Part I
-## Foundations and Vocabulary
-
-*What the terms mean and why the control systems exist.*
+# Foundations and Vocabulary
 
 ---
 
@@ -226,10 +223,7 @@ Examples may include approved cryptographic devices, components, or modules that
 
 <!-- _class: lead -->
 
-# Part II
-## Authorization, Custody, and Records
-
-*Who may take custody, how to validate them, and what records prove it.*
+# Authorization, Custody, and Records
 
 ---
 
@@ -336,10 +330,7 @@ Validate both:
 
 <!-- _class: lead -->
 
-# Part III
-## Moving Classified Assets
-
-*Courier authorization, packaging, transport, and acceptance.*
+# Moving Classified Assets
 
 ---
 
@@ -408,10 +399,7 @@ Acceptance should include:
 
 <!-- _class: lead -->
 
-# Part IV
-## Inventory and Accountability
-
-*Keeping both units' records true, on schedule and on event.*
+# Inventory and Accountability
 
 ---
 
@@ -453,10 +441,7 @@ Also conduct a **100% inventory** when any of these triggers occur under the loc
 
 <!-- _class: lead -->
 
-# Part V
-## The 3NB Imaging Workflow
-
-*The end-to-end scenario, from customer prep through return.*
+# The 3NB Imaging Workflow
 
 ---
 
@@ -580,10 +565,7 @@ Return should mirror intake so custody remains documented through final receipt:
 
 <!-- _class: lead -->
 
-# Part VI
-## Severity, Checklists, and Everyday Rules
-
-*Consequences of failure and quick-reference practice.*
+# Severity, Checklists, and Everyday Rules
 
 ---
 
@@ -650,10 +632,7 @@ These rules prevent most avoidable CMCC mistakes:
 
 <!-- _class: lead -->
 
-# Part VII
-## Special Handling and the Bottom Line
-
-*Upclassing, working notes, stop-the-line judgment, and the four questions.*
+# Special Handling and the Bottom Line
 
 ---
 
