@@ -97,6 +97,29 @@ style: |
 
 ---
 
+# Outline
+
+This deck moves in seven parts, from vocabulary to a full imaging workflow:
+
+1. **Foundations and Vocabulary** — the terms and control systems behind classified SIPR handling.
+2. **Authorization, Custody, and Records** — who may sign, how to validate them, and what records prove custody.
+3. **Moving Classified Assets** — courier, packaging, transport, and acceptance requirements.
+4. **Inventory and Accountability** — keeping both units' records true.
+5. **The 3NB Imaging Workflow** — the end-to-end scenario, from customer prep to return.
+6. **Severity, Checklists, and Everyday Rules** — consequences and quick-reference practice.
+7. **Special Handling and the Bottom Line** — upclassing, working notes, and stop-the-line judgment.
+
+---
+
+<!-- _class: lead -->
+
+# Part I
+## Foundations and Vocabulary
+
+*What the terms mean and why the control systems exist.*
+
+---
+
 # 1. Scope and Ground Rules
 
 This deck provides a **policy-level SOP model** for SIPR laptops, hard drives, removable media, and related classified/COMSEC material.
@@ -203,6 +226,15 @@ Examples may include approved cryptographic devices, components, or modules that
 
 ---
 
+<!-- _class: lead -->
+
+# Part II
+## Authorization, Custody, and Records
+
+*Who may take custody, how to validate them, and what records prove it.*
+
+---
+
 # 8. Policy Baseline
 
 Classified material must be protected by one of two conditions:<sup><a href="#ref-11">[11]</a></sup>
@@ -305,6 +337,15 @@ Marine Corps policy specifically includes removable or removed classified hard d
 
 ---
 
+<!-- _class: lead -->
+
+# Part III
+## Moving Classified Assets
+
+*Courier authorization, packaging, transport, and acceptance.*
+
+---
+
 # 14. Courier Requirements
 
 For this SOP, a courier package should include:
@@ -369,6 +410,15 @@ Acceptance should include:
 
 ---
 
+<!-- _class: lead -->
+
+# Part IV
+## Inventory and Accountability
+
+*Keeping both units' records true, on schedule and on event.*
+
+---
+
 # 18. How the Hand Receipt Enters Inventory
 
 The owning unit should annotate its inventory when classified material leaves approved open storage or changes temporary custody.<sup><a href="#ref-22">[22]</a></sup>
@@ -406,6 +456,15 @@ Also conduct a **100% inventory** when any of these triggers occur under the loc
 Keep the policy baseline in mind: Top Secret has formal minimum inventory requirements, and Secret/below material removed from approved open storage must remain controlled and accounted for until returned.<sup><a href="#ref-23">[23]</a></sup><sup><a href="#ref-24">[24]</a></sup>
 
 <div class="callout deviation"><strong>Deviation Consequence:</strong> delayed inventory can delay discovery of loss and increase damage assessment scope.</div>
+
+---
+
+<!-- _class: lead -->
+
+# Part V
+## The 3NB Imaging Workflow
+
+*The end-to-end scenario, from customer prep through return.*
 
 ---
 
@@ -528,6 +587,15 @@ Return should mirror intake so custody remains documented through final receipt:
 
 ---
 
+<!-- _class: lead -->
+
+# Part VI
+## Severity, Checklists, and Everyday Rules
+
+*Consequences of failure and quick-reference practice.*
+
+---
+
 # 27. Security Violation Severity Guide
 
 | Failure | Likely severity |
@@ -587,6 +655,15 @@ These rules prevent most avoidable CMCC mistakes:
 4. **If local policy is stricter, local policy wins.**
 
 <div class="callout counter"><strong>Counter Example:</strong> convenience shortcuts usually become audit findings after the fact.</div>
+
+---
+
+<!-- _class: lead -->
+
+# Part VII
+## Special Handling and the Bottom Line
+
+*Upclassing, working notes, stop-the-line judgment, and the four questions.*
 
 ---
 
