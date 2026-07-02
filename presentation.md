@@ -551,7 +551,70 @@ Before releasing the asset back to the customer, confirm:
 
 ---
 
-# 30. Bottom Line
+# 30. Miscellaneous Rules to Live By
+
+These rules prevent most avoidable CMCC mistakes:
+
+1. **If you cannot prove custody, stop and reconcile.**
+2. **If the marking is unclear, treat it at the higher level until corrected.**
+3. **If the person is not validated, do not release the asset.**
+4. **If local policy is stricter, local policy wins.**
+
+**Security consequence:** convenience shortcuts usually become audit findings after the fact.
+
+---
+
+# 31. Working Notes, Drafts, and Scratch Documents
+
+Working notes can become classified material as soon as they contain classified information.
+
+For working papers or notes:
+
+- Mark the **top and bottom** with the highest classification present.
+- Date the working paper when created.
+- Add portion markings when the notes will be shared, retained, or turned into a formal product.
+- Use source documents or security guidance; do not invent classification decisions.
+
+DoD marking policy specifically addresses classified working papers and standardized banner/portion markings.<sup><a href="#ref-28">[28]</a></sup>
+
+**Security consequence:** an unmarked notebook page can still contain classified information and must be protected accordingly.
+
+---
+
+# 32. Maintain or Destroy Working Notes
+
+Do not let scratch paper become an unofficial archive.
+
+When working notes are no longer needed:
+
+- Destroy them using approved classified-destruction procedures.
+- Record destruction when local SOP or the material type requires it.
+- If retained, store and account for them at the proper classification level.
+- If released outside the workspace, mark, route, and receipt them like any other classified material.
+
+Classified information must be destroyed only by authorized means that prevent reconstruction.<sup><a href="#ref-29">[29]</a></sup>
+
+**Security consequence:** forgotten notes can create the same loss or compromise problem as a missing drive.
+
+---
+
+# 33. When in Doubt, Stop the Line
+
+Pause the movement, imaging, or return when:
+
+- Serial numbers do not match.
+- Markings, caveats, or classification are unclear.
+- The courier or receiver is not validated.
+- Packaging, locks, seals, or storage approval are questionable.
+- Notes, removable media, or labels appear unexpectedly.
+
+Escalate to the Security Manager, CMCC custodian, COMSEC Manager, KOA Manager, or chain of command before continuing.
+
+**Security consequence:** stopping for five minutes is cheaper than reconstructing custody after a reportable incident.
+
+---
+
+# 34. Bottom Line
 
 CMCC control is about answering four questions at all times:
 
@@ -568,7 +631,7 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (1/9)
+# References (1/10)
 
 <a id="ref-1"></a>[1]: Department of the Navy, Headquarters Marine Corps, *Marine Corps Order 5510.18B: United States Marine Corps Information and Personnel Security Program*, January 30, 2017, chap. 1, para. 3.c. Official publication page: <https://www.marines.mil/News/Publications/MCPEL/Electronic-Library-Display/Article/1065115/mco-551018b/>. PDF: <https://www.marines.mil/portals/1/Publications/MCO%205510.18B.pdf>.
 
@@ -580,7 +643,7 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (2/9)
+# References (2/10)
 
 <a id="ref-4"></a>[4]: National Institute of Standards and Technology, Computer Security Resource Center, “COMSEC Material,” glossary entry. <https://csrc.nist.gov/glossary/term/comsec_material>.
 
@@ -592,7 +655,7 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (3/9)
+# References (3/10)
 
 <a id="ref-7"></a>[7]: National Institute of Standards and Technology, Computer Security Resource Center, “KMI Operating Account,” glossary entry citing CNSSI 4009-2015. <https://csrc.nist.gov/glossary/term/kmi_operating_account>.
 
@@ -604,7 +667,7 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (4/9)
+# References (4/10)
 
 <a id="ref-10"></a>[10]: Washington Headquarters Services, Executive Services Directorate, “SD 572: Cryptographic Access Certification and Termination,” edition date June 1, 2000. <https://www.esd.whs.mil/Directives/forms/sd_forms/SD572/>.
 
@@ -616,7 +679,7 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (5/9)
+# References (5/10)
 
 <a id="ref-13"></a>[13]: Department of Defense, *DoDM 5200.01, Volume 3*, encl. 2, sec. 3, <https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520001m_vol3.pdf>; 32 C.F.R. § 117.21(f), <https://www.ecfr.gov/current/title-32/subtitle-A/chapter-I/subchapter-D/part-117/section-117.21>.
 
@@ -628,7 +691,7 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (6/9)
+# References (6/10)
 
 <a id="ref-16"></a>[16]: Department of the Navy, Headquarters Marine Corps, *MCO 5510.18B*, chap. 4, para. 3. Official publication page: <https://www.marines.mil/News/Publications/MCPEL/Electronic-Library-Display/Article/1065115/mco-551018b/>. PDF: <https://www.marines.mil/portals/1/Publications/MCO%205510.18B.pdf>.
 
@@ -640,7 +703,7 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (7/9)
+# References (7/10)
 
 <a id="ref-19"></a>[19]: Department of Defense, *DoDM 5200.01, Volume 3*, encl. 4, secs. 10–11. <https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520001m_vol3.pdf>.
 
@@ -652,7 +715,7 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (8/9)
+# References (8/10)
 
 <a id="ref-22"></a>[22]: Department of the Navy, Headquarters Marine Corps, *MCO 5510.18B*, chap. 4, para. 5.b–e. Official publication page: <https://www.marines.mil/News/Publications/MCPEL/Electronic-Library-Display/Article/1065115/mco-551018b/>. PDF: <https://www.marines.mil/portals/1/Publications/MCO%205510.18B.pdf>.
 
@@ -664,10 +727,20 @@ For SIPR imaging workflows, the technical task is not complete until the custody
 
 <!-- _class: tiny -->
 
-# References (9/9)
+# References (9/10)
 
 <a id="ref-25"></a>[25]: Department of Defense, *DoDM 5200.01, Volume 3*, encl. 3, sec. 3. <https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520001m_vol3.pdf>.
 
 <a id="ref-26"></a>[26]: Department of Defense, *DoDM 5200.01, Volume 3*, encl. 3, sec. 12.c. <https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520001m_vol3.pdf>.
 
 <a id="ref-27"></a>[27]: Department of Defense, *DoDM 5200.01, Volume 3*, encl. 6, sec. 2.a. <https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520001m_vol3.pdf>.
+
+---
+
+<!-- _class: tiny -->
+
+# References (10/10)
+
+<a id="ref-28"></a>[28]: Department of Defense, *DoD Manual 5200.01, Volume 2: DoD Information Security Program: Marking of Information*, February 24, 2012, incorporating Change 4, July 28, 2020, guidance on banner lines, portion markings, and classified working papers. <https://www.esd.whs.mil/portals/54/Documents/DD/issuances/dodm/520001m_vol2.pdf>.
+
+<a id="ref-29"></a>[29]: Department of Defense, *DoDM 5200.01, Volume 3*, encl. 5, destruction guidance for classified information and material. <https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodm/520001m_vol3.pdf>.
