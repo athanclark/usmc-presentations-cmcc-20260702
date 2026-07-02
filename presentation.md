@@ -319,7 +319,7 @@ For this SOP, a courier package should include:
 
 DoD policy requires written authorization for persons approved to escort, courier, or hand-carry classified material, and that authorization may be a letter, courier card, travel orders, or other written document.<sup><a href="#ref-17">[17]</a></sup>
 
-<div class="callout counter"><strong>Counter Example:</strong> couriering without documented authorization is an infraction at minimum; loss of custody can become a violation or compromise.</div>
+<div class="callout deviation"><strong>Deviation Consequence:</strong> couriering without documented authorization is an infraction at minimum; loss of custody can become a violation or compromise.</div>
 
 ---
 
