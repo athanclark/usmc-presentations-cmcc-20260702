@@ -137,6 +137,8 @@ When local policy is stricter than this deck, use the stricter rule.<sup><a href
 
 ---
 
+<!-- Narrator: Marine Corps policy treats classified National Security Information as including any matter, document, product, substance, or item of equipment on or in which classified information is recorded or embedded. [1] -->
+
 # 2. Classified Information vs. Classified Material
 
 **Classified information** is national-security information marked Confidential, Secret, or Top Secret.
@@ -150,19 +152,15 @@ Examples:
 - Removable media.
 - Printed document.
 - COMSEC keying material or equipment.
-
-Marine Corps policy treats classified National Security Information as including any matter, document, product, substance, or item of equipment on or in which classified information is recorded or embedded.<sup><a href="#ref-1">[1]</a></sup>
-
 <div class="callout counter"><strong>Counter Example:</strong> if a laptop chassis is tracked but the classified drive is not, the command may lose accountability for the actual classified material.</div>
 
 ---
 
+<!-- Narrator: Marine Corps policy lists CMCC programs as a best practice for classified-material control, including document-control and secondary-control-point functions. [2] -->
+
 # 3. What Is a CMCC?
 
 A **Classified Material Control Center (CMCC)** is a local command control function for receiving, logging, storing, issuing, inventorying, and returning classified material.
-
-Marine Corps policy lists CMCC programs as a best practice for classified-material control, including document-control and secondary-control-point functions.<sup><a href="#ref-2">[2]</a></sup>
-
 A **secondary control point** is a subordinate custody point—such as a section, lab, vault, or room custodian—that controls classified material locally while remaining accountable to the primary CMCC/security program.
 
 **Plain meaning:** the CMCC is the place or function that answers, “Who has this classified item, where is it, and what record proves it?”
@@ -322,15 +320,14 @@ Material removed from an approved open-storage area must be controlled and accou
 
 ---
 
+<!-- Narrator: Marine Corps policy specifically includes removable or removed classified hard drives, external hard drives, computers, disks, documents, and other media within classified control measures. [16] -->
+
 # 13. Serial Number Validation
 
 Validate both:
 
 1. **Chassis serial/property tag** for the laptop or workstation.
 2. **Drive/media serials** for internal drives, removable drives, SSDs, and other classified storage media.
-
-Marine Corps policy specifically includes removable or removed classified hard drives, external hard drives, computers, disks, documents, and other media within classified control measures.<sup><a href="#ref-16">[16]</a></sup>
-
 **Best practice:** record drive serials at release, intake, before imaging, after imaging, before return, and at final receipt.
 
 <div class="callout deviation"><strong>Deviation Consequence:</strong> a missing or swapped hard drive is potentially a loss of classified material, even if the laptop chassis is present.</div>
@@ -346,6 +343,8 @@ Marine Corps policy specifically includes removable or removed classified hard d
 
 ---
 
+<!-- Narrator: DoD policy requires written authorization for persons approved to escort, courier, or hand-carry classified material, and that authorization may be a letter, courier card, travel orders, or other written document. [17] -->
+
 # 14. Courier Requirements
 
 For this SOP, a courier package should include:
@@ -357,16 +356,13 @@ For this SOP, a courier package should include:
 - Office-retained copy of inventory or hand receipt.
 - Locked, opaque, durable container such as an approved Pelican-style case.
 - Inner sealed package or administrative packet as locally required.
-
-DoD policy requires written authorization for persons approved to escort, courier, or hand-carry classified material, and that authorization may be a letter, courier card, travel orders, or other written document.<sup><a href="#ref-17">[17]</a></sup>
-
 <div class="callout deviation"><strong>Deviation Consequence:</strong> couriering without documented authorization is an infraction at minimum; loss of custody can become a violation or compromise.</div>
 
 ---
 
-# 15. Packaging and Pelican Case Standards
+<!-- Narrator: DoD policy requires classified material being transferred to be enclosed in two opaque, sealed envelopes, wrappings, or containers durable enough to protect against exposure and show tampering. [18] -->
 
-DoD policy requires classified material being transferred to be enclosed in two opaque, sealed envelopes, wrappings, or containers durable enough to protect against exposure and show tampering.<sup><a href="#ref-18">[18]</a></sup>
+# 15. Packaging and Pelican Case Standards
 
 For hand-carry outside an activity, a locked briefcase or zippered pouch may serve as the outer wrapper; a locally approved locked Pelican-style case can serve the same practical purpose if approved by the Security Manager and compatible with local policy.<sup><a href="#ref-19">[19]</a></sup>
 
@@ -419,6 +415,8 @@ Acceptance should include:
 
 ---
 
+<!-- Narrator: Marine Corps policy encourages logs for hard-copy classified information and requires control and accountability when material leaves open storage. [22] -->
+
 # 18. How the Hand Receipt Enters Inventory
 
 The owning unit should annotate its inventory when classified material leaves approved open storage or changes temporary custody.<sup><a href="#ref-22">[22]</a></sup>
@@ -433,16 +431,13 @@ The receiving unit should enter the asset into a temporary custody log with:<sup
 - Authorized movement locations.
 - Work status.
 - Return status.
-
-Marine Corps policy encourages logs for hard-copy classified information and requires control and accountability when material leaves open storage.<sup><a href="#ref-22">[22]</a></sup>
-
 <div class="callout counter"><strong>Counter Example:</strong> if neither unit inventory reflects temporary custody, the asset is effectively uncontrolled.</div>
 
 ---
 
-# 19. Monthly and Event-Driven Inventory
+<!-- Narrator: Marine Corps policy sets minimum classified-material accountability rules, but CMCC programs commonly use stricter local controls for recurring physical accountability. [2] Keep the policy baseline in mind: Top Secret has formal minimum inventory requirements, and Secret/below material removed from approved open storage must remain controlled and accounted for until returned. [23][24] -->
 
-Marine Corps policy sets minimum classified-material accountability rules, but CMCC programs commonly use stricter local controls for recurring physical accountability.<sup><a href="#ref-2">[2]</a></sup>
+# 19. Monthly and Event-Driven Inventory
 
 For this battalion, treat **100% CMCC inventory** as the normal monthly accountability standard, not an exceptional event.
 
@@ -452,9 +447,6 @@ Also conduct a **100% inventory** when any of these triggers occur under the loc
 - Primary or alternate custodians turn over.
 - A security incident, discrepancy, suspected compromise, or loss concern occurs.
 - Temporary customer assets are received, imaged, transferred, or returned.
-
-Keep the policy baseline in mind: Top Secret has formal minimum inventory requirements, and Secret/below material removed from approved open storage must remain controlled and accounted for until returned.<sup><a href="#ref-23">[23]</a></sup><sup><a href="#ref-24">[24]</a></sup>
-
 <div class="callout deviation"><strong>Deviation Consequence:</strong> delayed inventory can delay discovery of loss and increase damage assessment scope.</div>
 
 ---
@@ -510,14 +502,13 @@ The 3NB receiver should:<sup><a href="#ref-15">[15]</a></sup>
 
 ---
 
+<!-- Narrator: An X.509/CAC/electronic lock helps control access, but DoD policy warns that electrically actuated locks do not, by themselves, substitute for required classified-storage locks or standards. [26] -->
+
 # 22. Scenario: Imaging Lab Storage
 
 A SIPR imaging lab may store assets only if the room is approved for the classification level and storage method.<sup><a href="#ref-25">[25]</a></sup>
 
 If the room is **not** approved open storage, assets should be stored in a GSA-approved container, vault, or other approved storage when not under direct observation and control of an authorized person.<sup><a href="#ref-25">[25]</a></sup>
-
-An X.509/CAC/electronic lock helps control access, but DoD policy warns that electrically actuated locks do not, by themselves, substitute for required classified-storage locks or standards.<sup><a href="#ref-26">[26]</a></sup>
-
 <div class="callout counter"><strong>Counter Example:</strong> an electronically controlled room that is not approved storage can still be improper classified storage.</div>
 
 ---
@@ -596,6 +587,8 @@ Return should mirror intake so custody remains documented through final receipt:
 
 ---
 
+<!-- Narrator: DoD characterizes an infraction as noncompliance that does not result in loss or compromise; a violation may result in loss or compromise; compromise means unauthorized disclosure; and loss occurs when classified information or equipment cannot be physically located or accounted for. [27] -->
+
 # 27. Security Violation Severity Guide
 
 | Failure | Likely severity |
@@ -606,9 +599,6 @@ Return should mirror intake so custody remains documented through final receipt:
 | Release to uncleared/no-need-to-know person | Compromise |
 | Asset, hard drive, or COMSEC material cannot be located | Loss |
 | Falsified receipt, intentional bypass, or negligent handling | Serious violation; command investigation likely |
-
-DoD characterizes an **infraction** as noncompliance that does not result in loss or compromise; a **violation** may result in loss or compromise; **compromise** means unauthorized disclosure; and **loss** occurs when classified information or equipment cannot be physically located or accounted for.<sup><a href="#ref-27">[27]</a></sup>
-
 ---
 
 # 28. Practical Intake Checklist
@@ -667,6 +657,8 @@ These rules prevent most avoidable CMCC mistakes:
 
 ---
 
+<!-- Narrator: Classified control measures apply to computers, hard drives, disks, documents, and other media containing classified information. [16] -->
+
 # 31. Upclassing Devices to SIPR
 
 Do not treat “this laptop is now SIPR” as an informal technician decision.
@@ -680,9 +672,6 @@ Before a chassis or hard drive is upclassed or accepted as SIPR/classified mater
 5. The device is marked for the resulting classification and caveats.
 6. The SF inventory/local classified-material inventory is updated from unclassified/property-only status to classified custody status.
 7. The CMCC control number is tied to the property tag, chassis serial, media serials, and chain-of-custody package.
-
-Classified control measures apply to computers, hard drives, disks, documents, and other media containing classified information.<sup><a href="#ref-16">[16]</a></sup>
-
 <div class="callout counter"><strong>Counter Example:</strong> if the scan package or supply custody trail is missing, the command may not know what was connected to SIPR or who controlled the media before upclassification.<sup><a href="#ref-22">[22]</a></sup></div>
 
 ---
@@ -703,6 +692,8 @@ Required movement path:
 
 ---
 
+<!-- Narrator: DoD marking policy specifically addresses classified working papers and standardized banner/portion markings. [28] -->
+
 # 33. Working Notes, Drafts, and Scratch Documents
 
 Working notes can become classified material as soon as they contain classified information.<sup><a href="#ref-28">[28]</a></sup>
@@ -713,9 +704,6 @@ For working papers or notes:<sup><a href="#ref-28">[28]</a></sup>
 - Date the working paper when created.
 - Add portion markings when the notes will be shared, retained, or turned into a formal product.
 - Use source documents or security guidance; do not invent classification decisions.
-
-DoD marking policy specifically addresses classified working papers and standardized banner/portion markings.<sup><a href="#ref-28">[28]</a></sup>
-
 <div class="callout counter"><strong>Counter Example:</strong> an unmarked notebook page can still contain classified information and must be protected accordingly.</div>
 
 ---
