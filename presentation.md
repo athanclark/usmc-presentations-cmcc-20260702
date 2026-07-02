@@ -348,7 +348,7 @@ Courier rules apply regardless of vehicle:
 - Do not open the package en route except under policy-defined circumstances.
 - Arrange approved secure storage if travel is interrupted or overnight storage becomes necessary.<sup><a href="#ref-21">[21]</a></sup>
 
-<div class="callout counter"><strong>Counter Example:</strong> leaving classified material in a POV, even briefly, may be a reportable security violation and may become a loss or compromise.</div>
+<div class="callout deviation"><strong>Deviation Consequence:</strong> leaving classified material in a POV, even briefly, may be a reportable security violation and may become a loss or compromise.</div>
 
 ---
 
@@ -365,7 +365,7 @@ Acceptance should include:
 5. Record date/time, location, receiving official, and witness if required.
 6. Refuse or annotate discrepancies before signing.
 
-<div class="callout counter"><strong>Counter Example:</strong> signing before verification creates false custody and may conceal loss, tampering, or unauthorized substitution.</div>
+<div class="callout deviation"><strong>Deviation Consequence:</strong> signing before verification creates false custody and may conceal loss, tampering, or unauthorized substitution.</div>
 
 ---
 
