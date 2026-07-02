@@ -390,20 +390,20 @@ Marine Corps policy encourages logs for hard-copy classified information and req
 
 ---
 
-# 19. Inventory Frequency and Physical Validation
+# 19. Monthly and Event-Driven Inventory
 
-Minimum inventory expectations vary by material type and classification.
+Marine Corps policy sets minimum classified-material accountability rules, but CMCC programs commonly use stricter local controls for recurring physical accountability.<sup><a href="#ref-2">[2]</a></sup>
 
-For Top Secret material, Marine Corps policy requires inventories at least annually or more often when circumstances warrant.<sup><a href="#ref-23">[23]</a></sup>
+For this battalion, treat **100% CMCC inventory** as the normal monthly accountability standard, not an exceptional event.
 
-For Secret and below, material inside approved open storage requires no additional control while it remains there, but material removed from open storage must be controlled and accounted for until returned.<sup><a href="#ref-24">[24]</a></sup>
+Also conduct a **100% inventory** when any of these triggers occur under the local battalion order:
 
-For temporary customer assets, use a stricter local standard:
+- 20% or more of the inventory changes.
+- Primary or alternate custodians turn over.
+- A security incident, discrepancy, suspected compromise, or loss concern occurs.
+- Temporary customer assets are received, imaged, transferred, or returned.
 
-- 100% physical validation at intake.
-- 100% physical validation before and after imaging.
-- 100% physical validation before return.
-- 100% reconciliation during custodian change, discrepancy, or suspected compromise.
+Keep the policy baseline in mind: Top Secret has formal minimum inventory requirements, and Secret/below material removed from approved open storage must remain controlled and accounted for until returned.<sup><a href="#ref-23">[23]</a></sup><sup><a href="#ref-24">[24]</a></sup>
 
 <div class="callout deviation"><strong>Deviation Consequence:</strong> delayed inventory can delay discovery of loss and increase damage assessment scope.</div>
 
