@@ -582,7 +582,23 @@ Classified control measures apply to computers, hard drives, disks, documents, a
 
 ---
 
-# 32. Working Notes, Drafts, and Scratch Documents
+# 32. SIPR Assets Are Not User-Carried IT Gear
+
+A SIPR laptop may look like ordinary IT equipment, but once it is a SIPR/classified asset it must move as classified material—not by casual user hand-carry.<sup><a href="#ref-11">[11]</a></sup><sup><a href="#ref-17">[17]</a></sup>
+
+Required movement path:
+
+1. CMCC/security release approval.
+2. SF-153 when COMSEC material is involved, or the required local classified-material hand receipt/inventory record for non-COMSEC SIPR assets.
+3. Valid courier appointment or written authorization.
+4. Proper packaging, continuous custody, and receipt at the destination.
+5. Inventory/control-number update showing who has custody and where the asset is located.<sup><a href="#ref-15">[15]</a></sup><sup><a href="#ref-17">[17]</a></sup><sup><a href="#ref-18">[18]</a></sup><sup><a href="#ref-22">[22]</a></sup>
+
+**Security consequence:** “the user just moved their laptop” can become an undocumented transfer of classified material.
+
+---
+
+# 33. Working Notes, Drafts, and Scratch Documents
 
 Working notes can become classified material as soon as they contain classified information.<sup><a href="#ref-28">[28]</a></sup>
 
@@ -599,7 +615,7 @@ DoD marking policy specifically addresses classified working papers and standard
 
 ---
 
-# 33. Maintain or Destroy Working Notes
+# 34. Maintain or Destroy Working Notes
 
 Do not let scratch paper become an unofficial archive.<sup><a href="#ref-28">[28]</a></sup><sup><a href="#ref-29">[29]</a></sup>
 
@@ -616,7 +632,7 @@ Classified information must be destroyed only by authorized means that prevent r
 
 ---
 
-# 34. When in Doubt, Stop the Line
+# 35. When in Doubt, Stop the Line
 
 Pause the movement, imaging, or return when:
 
@@ -632,7 +648,7 @@ Escalate to the Security Manager, CMCC custodian, COMSEC Manager, KOA Manager, o
 
 ---
 
-# 35. Bottom Line
+# 36. Bottom Line
 
 CMCC control is about answering four questions at all times:
 
