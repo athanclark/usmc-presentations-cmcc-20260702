@@ -234,7 +234,7 @@ Typical qualified signers include:
 
 Do **not** let an ordinary end user sign merely because they are the technical point of contact.<sup><a href="#ref-12">[12]</a></sup>
 
-<div class="callout counter"><strong>Counter Example:</strong> release to an unqualified signer is at least an accountability failure and may become a compromise if access was not authorized.</div>
+<div class="callout deviation"><strong>Deviation Consequence:</strong> release to an unqualified signer is at least an accountability failure and may become a compromise if access was not authorized.</div>
 
 ---
 
