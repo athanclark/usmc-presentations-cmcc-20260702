@@ -140,6 +140,8 @@ A **Classified Material Control Center (CMCC)** is a local command control funct
 
 Marine Corps policy lists CMCC programs as a best practice for classified-material control, including document-control and secondary-control-point functions.<sup><a href="#ref-2">[2]</a></sup>
 
+A **secondary control point** is a subordinate custody point—such as a section, lab, vault, or room custodian—that controls classified material locally while remaining accountable to the primary CMCC/security program.
+
 **Plain meaning:** the CMCC is the place or function that answers, “Who has this classified item, where is it, and what record proves it?”
 
 <div class="callout counter"><strong>Counter Example:</strong> without a CMCC-style control point, classified assets can move by habit, email, or word of mouth instead of by accountable custody.</div>
