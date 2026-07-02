@@ -165,11 +165,13 @@ COMSEC includes:
 
 ---
 
-# 5. What Are CMCS, KMI, and KOA?
+# 5. What Are CMCS, EKMS, KMI, and KOA?
 
-The **COMSEC Material Control System (CMCS)** is the logistics and accounting system used to distribute, control, and safeguard COMSEC material marked CRYPTO; EKMS and KMI are examples of tools used by CMCS.<sup><a href="#ref-5">[5]</a></sup>
+The **COMSEC Material Control System (CMCS)** is the logistics and accounting system used to distribute, control, and safeguard COMSEC material marked **"CRYPTO"**.<sup><a href="#ref-5">[5]</a></sup>
 
-**Key Management Infrastructure (KMI)** provides generation, production, storage, protection, distribution, control, tracking, and destruction for cryptographic keying material.<sup><a href="#ref-6">[6]</a></sup>
+Here, **"CRYPTO"** is a COMSEC marking/control label—not another acronym to decode.
+
+**Electronic Key Management System (EKMS)** and **Key Management Infrastructure (KMI)** are examples of tools used by CMCS; KMI provides generation, production, storage, protection, distribution, control, tracking, and destruction for cryptographic keying material.<sup><a href="#ref-5">[5]</a></sup><sup><a href="#ref-6">[6]</a></sup>
 
 A **KMI Operating Account (KOA)** is the KMI account relationship used to manage devices and control distribution of KMI products to those devices.<sup><a href="#ref-7">[7]</a></sup>
 
