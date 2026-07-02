@@ -88,7 +88,7 @@ It does **not** replace:
 
 When local policy is stricter than this deck, use the stricter rule.<sup><a href="#ref-1">[1]</a></sup>
 
-**Security consequence:** treating local procedures as optional can turn a minor administrative mistake into an accountability failure.
+**Counter Example:** treating local procedures as optional can turn a minor administrative mistake into an accountability failure.
 
 ---
 
@@ -108,7 +108,7 @@ Examples:
 
 Marine Corps policy treats classified National Security Information as including any matter, document, product, substance, or item of equipment on or in which classified information is recorded or embedded.<sup><a href="#ref-1">[1]</a></sup>
 
-**Security consequence:** if a laptop chassis is tracked but the classified drive is not, the command may lose accountability for the actual classified material.
+**Counter Example:** if a laptop chassis is tracked but the classified drive is not, the command may lose accountability for the actual classified material.
 
 ---
 
@@ -120,7 +120,7 @@ Marine Corps policy lists CMCC programs as a best practice for classified-materi
 
 **Plain meaning:** the CMCC is the place or function that answers, “Who has this classified item, where is it, and what record proves it?”
 
-**Security consequence:** without a CMCC-style control point, classified assets can move by habit, email, or word of mouth instead of by accountable custody.
+**Counter Example:** without a CMCC-style control point, classified assets can move by habit, email, or word of mouth instead of by accountable custody.
 
 ---
 
@@ -137,7 +137,7 @@ COMSEC includes:
 
 **COMSEC material** includes items designed to secure or authenticate telecommunications, including key, equipment, modules, devices, documents, hardware, firmware, or software that embody cryptographic logic or perform COMSEC functions.<sup><a href="#ref-4">[4]</a></sup>
 
-**Security consequence:** mishandling COMSEC material may be more serious than ordinary property loss because it can affect cryptographic trust and mission communications.
+**Deviation Consequence:** mishandling COMSEC material may be more serious than ordinary property loss because it can affect cryptographic trust and mission communications.
 
 ---
 
@@ -149,7 +149,7 @@ The **COMSEC Material Control System (CMCS)** is the logistics and accounting sy
 
 A **KMI Operating Account (KOA)** is the KMI account relationship used to manage devices and control distribution of KMI products to those devices.<sup><a href="#ref-7">[7]</a></sup>
 
-**Security consequence:** using a property receipt alone for COMSEC/KMI material may fail to meet COMSEC accountability requirements.
+**Counter Example:** using a property receipt alone for COMSEC/KMI material may fail to meet COMSEC accountability requirements.
 
 ---
 
@@ -161,7 +161,7 @@ A **Controlled Cryptographic Item (CCI)** is normally unclassified equipment or 
 
 Examples may include approved cryptographic devices, components, or modules that perform a COMSEC function.
 
-**Security consequence:** treating CCI as ordinary IT gear can create a COMSEC incident even when the item is not marked classified.
+**Counter Example:** treating CCI as ordinary IT gear can create a COMSEC incident even when the item is not marked classified.
 
 ---
 
@@ -173,7 +173,7 @@ Examples may include approved cryptographic devices, components, or modules that
 
 **CBAF:** for this deck, CBAF refers to the local **Command Billet Access Form** or equivalent billet/access validation artifact. Treat it as a local command record that may support access validation, not as a substitute for clearance, need-to-know, courier appointment, SD-572, SF-153, or CMCC custody records unless local policy explicitly says otherwise.
 
-**Security consequence:** using the wrong validation document may mean the recipient was never properly authorized to receive or access the material.
+**Counter Example:** using the wrong validation document may mean the recipient was never properly authorized to receive or access the material.
 
 ---
 
@@ -191,7 +191,7 @@ Before access is granted, the person must have:<sup><a href="#ref-12">[12]</a></
 - Need-to-know.
 - Any additional COMSEC, cryptographic, NATO, SCI, SAP, or local briefing required for the material.<sup><a href="#ref-12">[12]</a></sup>
 
-**Security consequence:** custody without authorization is not just poor paperwork; it can be unauthorized disclosure.
+**Counter Example:** custody without authorization is not just poor paperwork; it can be unauthorized disclosure.
 
 ---
 
@@ -208,7 +208,7 @@ Typical qualified signers include:
 
 Do **not** let an ordinary end user sign merely because they are the technical point of contact.<sup><a href="#ref-12">[12]</a></sup>
 
-**Security consequence:** release to an unqualified signer is at least an accountability failure and may become a compromise if access was not authorized.
+**Counter Example:** release to an unqualified signer is at least an accountability failure and may become a compromise if access was not authorized.
 
 ---
 
@@ -224,7 +224,7 @@ Before releasing the asset, validate:
 
 For classified cryptographic information, SD-572 Section I must be executed before access, and Section II must be executed when access is no longer required.<sup><a href="#ref-14">[14]</a></sup>
 
-**Security consequence:** if qualification is assumed instead of validated, the release may become a security violation or compromise.
+**Counter Example:** if qualification is assumed instead of validated, the release may become a security violation or compromise.
 
 ---
 
@@ -242,7 +242,7 @@ Use the record required by the material type.<sup><a href="#ref-9">[9]</a></sup>
 
 The custody record should identify the item without adding unnecessary classified operational detail.<sup><a href="#ref-15">[15]</a></sup>
 
-**Security consequence:** a property record may prove ownership, but it does not automatically prove classified custody.<sup><a href="#ref-22">[22]</a></sup>
+**Counter Example:** a property record may prove ownership, but it does not automatically prove classified custody.<sup><a href="#ref-22">[22]</a></sup>
 
 ---
 
@@ -260,7 +260,7 @@ A temporary hand receipt should record:
 
 Material removed from an approved open-storage area must be controlled and accounted for until returned.<sup><a href="#ref-15">[15]</a></sup>
 
-**Security consequence:** incomplete hand receipts make it difficult to determine last known location, responsible person, and whether a loss occurred.
+**Counter Example:** incomplete hand receipts make it difficult to determine last known location, responsible person, and whether a loss occurred.
 
 ---
 
@@ -275,7 +275,7 @@ Marine Corps policy specifically includes removable or removed classified hard d
 
 **Best practice:** record drive serials at release, intake, before imaging, after imaging, before return, and at final receipt.
 
-**Security consequence:** a missing or swapped hard drive is potentially a loss of classified material, even if the laptop chassis is present.
+**Deviation Consequence:** a missing or swapped hard drive is potentially a loss of classified material, even if the laptop chassis is present.
 
 ---
 
@@ -293,7 +293,7 @@ For this SOP, a courier package should include:
 
 DoD policy requires written authorization for persons approved to escort, courier, or hand-carry classified material, and that authorization may be a letter, courier card, travel orders, or other written document.<sup><a href="#ref-17">[17]</a></sup>
 
-**Security consequence:** couriering without documented authorization is an infraction at minimum; loss of custody can become a violation or compromise.
+**Counter Example:** couriering without documented authorization is an infraction at minimum; loss of custody can become a violation or compromise.
 
 ---
 
@@ -305,7 +305,7 @@ For hand-carry outside an activity, a locked briefcase or zippered pouch may ser
 
 Do not mark the outside of the container in a way that reveals or advertises classified contents.<sup><a href="#ref-20">[20]</a></sup>
 
-**Security consequence:** poor packaging can create accidental exposure, tampering uncertainty, or unauthorized disclosure.
+**Counter Example:** poor packaging can create accidental exposure, tampering uncertainty, or unauthorized disclosure.
 
 ---
 
@@ -322,7 +322,7 @@ Courier rules apply regardless of vehicle:
 - Do not open the package en route except under policy-defined circumstances.
 - Arrange approved secure storage if travel is interrupted or overnight storage becomes necessary.<sup><a href="#ref-21">[21]</a></sup>
 
-**Security consequence:** leaving classified material in a POV, even briefly, may be a reportable security violation and may become a loss or compromise.
+**Counter Example:** leaving classified material in a POV, even briefly, may be a reportable security violation and may become a loss or compromise.
 
 ---
 
@@ -339,7 +339,7 @@ Acceptance should include:
 5. Record date/time, location, receiving official, and witness if required.
 6. Refuse or annotate discrepancies before signing.
 
-**Security consequence:** signing before verification creates false custody and may conceal loss, tampering, or unauthorized substitution.
+**Counter Example:** signing before verification creates false custody and may conceal loss, tampering, or unauthorized substitution.
 
 ---
 
@@ -360,7 +360,7 @@ The receiving unit should enter the asset into a temporary custody log with:<sup
 
 Marine Corps policy encourages logs for hard-copy classified information and requires control and accountability when material leaves open storage.<sup><a href="#ref-22">[22]</a></sup>
 
-**Security consequence:** if neither unit inventory reflects temporary custody, the asset is effectively uncontrolled.
+**Counter Example:** if neither unit inventory reflects temporary custody, the asset is effectively uncontrolled.
 
 ---
 
@@ -379,7 +379,7 @@ For temporary customer assets, use a stricter local standard:
 - 100% physical validation before return.
 - 100% reconciliation during custodian change, discrepancy, or suspected compromise.
 
-**Security consequence:** delayed inventory can delay discovery of loss and increase damage assessment scope.
+**Deviation Consequence:** delayed inventory can delay discovery of loss and increase damage assessment scope.
 
 ---
 
@@ -399,7 +399,7 @@ The customer unit should:
 
 The asset should not be released directly from an end user or help desk without CMCC/security accountability.<sup><a href="#ref-2">[2]</a></sup><sup><a href="#ref-12">[12]</a></sup>
 
-**Security consequence:** bypassing CMCC creates a custody gap before the asset ever reaches 3NB.
+**Counter Example:** bypassing CMCC creates a custody gap before the asset ever reaches 3NB.
 
 ---
 
@@ -421,7 +421,7 @@ The 3NB receiver should:<sup><a href="#ref-15">[15]</a></sup>
 5. Enter the item into the 3NB temporary classified-material custody log.
 6. Store the complete packet with the CMCC record, not just in the technician’s notes.
 
-**Security consequence:** if a technician signs without appointment, the record may not establish valid transfer of custody.
+**Counter Example:** if a technician signs without appointment, the record may not establish valid transfer of custody.
 
 ---
 
@@ -433,7 +433,7 @@ If the room is **not** approved open storage, assets should be stored in a GSA-a
 
 An X.509/CAC/electronic lock helps control access, but DoD policy warns that electrically actuated locks do not, by themselves, substitute for required classified-storage locks or standards.<sup><a href="#ref-26">[26]</a></sup>
 
-**Security consequence:** an electronically controlled room that is not approved storage can still be improper classified storage.
+**Counter Example:** an electronically controlled room that is not approved storage can still be improper classified storage.
 
 ---
 
@@ -452,7 +452,7 @@ The 3NB internal custody log should record the most precise controlled location 
 
 **Recommended wording:** the customer receipt may state “3NB CMCC/SIPR imaging lab, approved storage locations only,” while the 3NB custody log records exact room/container movement.
 
-**Security consequence:** building-only tracking may be insufficient if the asset cannot be immediately located during inventory.
+**Counter Example:** building-only tracking may be insufficient if the asset cannot be immediately located during inventory.
 
 ---
 
@@ -468,7 +468,7 @@ Moving a customer asset between rooms should preserve accountability and approve
 
 A new customer hand receipt is not required for every internal room move if 3NB remains the accountable temporary custodian and the internal movement log is complete.<sup><a href="#ref-22">[22]</a></sup>
 
-**Security consequence:** unlogged internal movement can look identical to loss during an audit.
+**Counter Example:** unlogged internal movement can look identical to loss during an audit.
 
 ---
 
@@ -482,7 +482,7 @@ When imaging is complete, 3NB should close out custody before release:<sup><a hr
 4. Notify the customer unit’s CMCC, Security Manager, vault custodian, or COMSEC Manager—not merely the end user.
 5. Require the customer to send an appointed courier with courier authorization.
 
-**Security consequence:** notifying only the end user can result in release to a person who lacks authority to accept custody.
+**Counter Example:** notifying only the end user can result in release to a person who lacks authority to accept custody.
 
 ---
 
@@ -498,7 +498,7 @@ Return should mirror intake so custody remains documented through final receipt:
 6. Customer signs acceptance and updates its inventory back to “on hand.”
 7. Discrepancies are stopped, annotated, reported, and resolved before release when possible.
 
-**Security consequence:** a return without serial reconciliation can transfer an undetected discrepancy back to the customer unit.
+**Counter Example:** a return without serial reconciliation can transfer an undetected discrepancy back to the customer unit.
 
 ---
 
@@ -530,7 +530,7 @@ Before accepting a SIPR asset for imaging, confirm:<sup><a href="#ref-12">[12]</
 - Storage location is approved.
 - Temporary custody log is updated immediately.
 
-**Security consequence:** each unchecked item is a potential custody, access, or storage failure.
+**Deviation Consequence:** each unchecked item is a potential custody, access, or storage failure.
 
 ---
 
@@ -547,7 +547,7 @@ Before releasing the asset back to the customer, confirm:<sup><a href="#ref-15">
 - 3NB temporary custody log is closed.
 - Customer inventory is updated.
 
-**Security consequence:** a sloppy return can create a false record that hides loss, unauthorized access, or unresolved discrepancy.
+**Counter Example:** a sloppy return can create a false record that hides loss, unauthorized access, or unresolved discrepancy.
 
 ---
 
@@ -560,7 +560,7 @@ These rules prevent most avoidable CMCC mistakes:
 3. **If the person is not validated, do not release the asset.**
 4. **If local policy is stricter, local policy wins.**
 
-**Security consequence:** convenience shortcuts usually become audit findings after the fact.
+**Counter Example:** convenience shortcuts usually become audit findings after the fact.
 
 ---
 
@@ -578,7 +578,7 @@ Before a device is upclassed or accepted as SIPR/classified material:<sup><a hre
 
 Classified control measures apply to computers, hard drives, disks, documents, and other media containing classified information.<sup><a href="#ref-16">[16]</a></sup>
 
-**Security consequence:** if the SF inventory says “unclassified laptop” but the CMCC record says “SIPR asset,” the command has an accountability mismatch.<sup><a href="#ref-22">[22]</a></sup>
+**Counter Example:** if the SF inventory says “unclassified laptop” but the CMCC record says “SIPR asset,” the command has an accountability mismatch.<sup><a href="#ref-22">[22]</a></sup>
 
 ---
 
@@ -594,7 +594,7 @@ Required movement path:
 4. Proper packaging, continuous custody, and receipt at the destination.
 5. Inventory/control-number update showing who has custody and where the asset is located.<sup><a href="#ref-15">[15]</a></sup><sup><a href="#ref-17">[17]</a></sup><sup><a href="#ref-18">[18]</a></sup><sup><a href="#ref-22">[22]</a></sup>
 
-**Security consequence:** “the user just moved their laptop” can become an undocumented transfer of classified material.
+**Counter Example:** “the user just moved their laptop” can become an undocumented transfer of classified material.
 
 ---
 
@@ -611,7 +611,7 @@ For working papers or notes:<sup><a href="#ref-28">[28]</a></sup>
 
 DoD marking policy specifically addresses classified working papers and standardized banner/portion markings.<sup><a href="#ref-28">[28]</a></sup>
 
-**Security consequence:** an unmarked notebook page can still contain classified information and must be protected accordingly.
+**Counter Example:** an unmarked notebook page can still contain classified information and must be protected accordingly.
 
 ---
 
@@ -628,7 +628,7 @@ When working notes are no longer needed:
 
 Classified information must be destroyed only by authorized means that prevent reconstruction.<sup><a href="#ref-29">[29]</a></sup>
 
-**Security consequence:** forgotten notes can create the same loss or compromise problem as a missing drive.
+**Counter Example:** forgotten notes can create the same loss or compromise problem as a missing drive.
 
 ---
 
@@ -644,7 +644,7 @@ Pause the movement, imaging, or return when:
 
 Escalate to the Security Manager, CMCC custodian, COMSEC Manager, KOA Manager, or chain of command before continuing.
 
-**Security consequence:** stopping for five minutes is cheaper than reconstructing custody after a reportable incident.
+**Deviation Consequence:** stopping for five minutes is cheaper than reconstructing custody after a reportable incident.
 
 ---
 
@@ -659,7 +659,7 @@ CMCC control is about answering four questions at all times:
 
 For SIPR imaging workflows, the technical task is not complete until the custody record is complete.<sup><a href="#ref-15">[15]</a></sup><sup><a href="#ref-22">[22]</a></sup>
 
-**Security consequence:** if the record cannot prove custody, the command may have to treat the situation as a potential loss or compromise.
+**Deviation Consequence:** if the record cannot prove custody, the command may have to treat the situation as a potential loss or compromise.
 
 ---
 
