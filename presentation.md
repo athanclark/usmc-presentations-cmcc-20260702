@@ -86,7 +86,7 @@ It does **not** replace:
 - SCI/SAP-specific rules.
 - Local vault/open-storage approval documentation.
 
-When local policy is stricter than this deck, use the stricter rule.
+When local policy is stricter than this deck, use the stricter rule.<sup><a href="#ref-1">[1]</a></sup>
 
 **Security consequence:** treating local procedures as optional can turn a minor administrative mistake into an accountability failure.
 
@@ -179,12 +179,12 @@ Examples may include approved cryptographic devices, components, or modules that
 
 # 8. Policy Baseline
 
-Classified material must be protected by one of two conditions:
+Classified material must be protected by one of two conditions:<sup><a href="#ref-11">[11]</a></sup>
 
 1. Stored as required by policy.
 2. Under the personal observation and control of an authorized person.<sup><a href="#ref-11">[11]</a></sup>
 
-Before access is granted, the person must have:
+Before access is granted, the person must have:<sup><a href="#ref-12">[12]</a></sup>
 
 - Proper clearance eligibility.
 - SF-312 on file.
@@ -197,7 +197,7 @@ Before access is granted, the person must have:
 
 # 9. Who May Sign for Classified SIPR Assets?
 
-Qualified signers should be appointed or otherwise documented by the command.
+Qualified signers should be appointed or otherwise documented by the command before accepting custody.<sup><a href="#ref-12">[12]</a></sup>
 
 Typical qualified signers include:
 
@@ -206,7 +206,7 @@ Typical qualified signers include:
 - COMSEC Manager, KOA Manager, or alternate, when COMSEC/KMI material is involved.
 - Formally appointed hand-receipt holder or lab custodian.
 
-Do **not** let an ordinary end user sign merely because they are the technical point of contact.
+Do **not** let an ordinary end user sign merely because they are the technical point of contact.<sup><a href="#ref-12">[12]</a></sup>
 
 **Security consequence:** release to an unqualified signer is at least an accountability failure and may become a compromise if access was not authorized.
 
@@ -230,7 +230,7 @@ For classified cryptographic information, SD-572 Section I must be executed befo
 
 # 11. Core Custody Records
 
-Use the record required by the material type:
+Use the record required by the material type.<sup><a href="#ref-9">[9]</a></sup><sup><a href="#ref-10">[10]</a></sup><sup><a href="#ref-22">[22]</a></sup>
 
 | Material type | Minimum record |
 |---|---|
@@ -240,9 +240,9 @@ Use the record required by the material type:
 | Classified cryptographic information access | SD-572 and access briefing/debriefing record |
 | Property accountability | Property record, GCSS-MC/DPAS/local equivalent |
 
-The custody record should identify the item without adding unnecessary classified operational detail.
+The custody record should identify the item without adding unnecessary classified operational detail.<sup><a href="#ref-15">[15]</a></sup>
 
-**Security consequence:** a property record may prove ownership, but it does not automatically prove classified custody.
+**Security consequence:** a property record may prove ownership, but it does not automatically prove classified custody.<sup><a href="#ref-22">[22]</a></sup>
 
 ---
 
@@ -313,7 +313,7 @@ Do not mark the outside of the container in a way that reveals or advertises cla
 
 **Preferred method:** government vehicle with official routing and direct travel.
 
-**POV use:** only when authorized by the command or Security Manager and when the courier can maintain continuous personal custody.
+**POV use:** only when authorized by the command or Security Manager and when the courier can maintain continuous personal custody.<sup><a href="#ref-21">[21]</a></sup>
 
 Courier rules apply regardless of vehicle:
 
@@ -328,7 +328,7 @@ Courier rules apply regardless of vehicle:
 
 # 17. Acceptance at the Receiving Unit
 
-The receiving unit should sign only after completing a physical sighting.
+The receiving unit should sign only after completing a physical sighting and record check.<sup><a href="#ref-15">[15]</a></sup>
 
 Acceptance should include:
 
@@ -345,11 +345,11 @@ Acceptance should include:
 
 # 18. How the Hand Receipt Enters Inventory
 
-The owning unit should annotate its inventory as:
+The owning unit should annotate its inventory when classified material leaves approved open storage or changes temporary custody.<sup><a href="#ref-22">[22]</a></sup>
 
 > “Issued on temporary hand receipt to [unit] for [purpose], [date/time], expected return [date/time].”
 
-The receiving unit should enter the asset into a temporary custody log with:
+The receiving unit should enter the asset into a temporary custody log with:<sup><a href="#ref-22">[22]</a></sup>
 
 - Owning unit.
 - Receiving custodian.
@@ -397,7 +397,7 @@ The customer unit should:
 6. Package the asset in the approved locked case.
 7. Retain a complete copy of the transfer packet.
 
-The asset should not be released directly from an end user or help desk without CMCC/security accountability.
+The asset should not be released directly from an end user or help desk without CMCC/security accountability.<sup><a href="#ref-2">[2]</a></sup><sup><a href="#ref-12">[12]</a></sup>
 
 **Security consequence:** bypassing CMCC creates a custody gap before the asset ever reaches 3NB.
 
@@ -405,14 +405,14 @@ The asset should not be released directly from an end user or help desk without 
 
 # 21. Scenario: 3NB Receives the Asset
 
-At 3NB, the asset should be received by one of the following:
+At 3NB, the asset should be received by one of the following documented/authorized custodians:<sup><a href="#ref-12">[12]</a></sup>
 
 - 3NB CMCC custodian or alternate.
 - Command Security Manager or alternate.
 - COMSEC/KOA Manager or alternate when COMSEC/KMI applies.
 - Formally appointed SIPR imaging lab custodian.
 
-The 3NB receiver should:
+The 3NB receiver should:<sup><a href="#ref-15">[15]</a></sup>
 
 1. Verify courier authority.
 2. Inspect package condition.
@@ -427,7 +427,7 @@ The 3NB receiver should:
 
 # 22. Scenario: Imaging Lab Storage
 
-A SIPR imaging lab may store assets only if the room is approved for the classification level and storage method.
+A SIPR imaging lab may store assets only if the room is approved for the classification level and storage method.<sup><a href="#ref-25">[25]</a></sup>
 
 If the room is **not** approved open storage, assets should be stored in a GSA-approved container, vault, or other approved storage when not under direct observation and control of an authorized person.<sup><a href="#ref-25">[25]</a></sup>
 
@@ -439,9 +439,9 @@ An X.509/CAC/electronic lock helps control access, but DoD policy warns that ele
 
 # 23. Scenario: Recording Location Inside 3NB
 
-The customer-to-3NB hand receipt should identify the receiving unit and authorized purpose.
+The customer-to-3NB hand receipt should identify the receiving unit and authorized purpose.<sup><a href="#ref-15">[15]</a></sup>
 
-The 3NB internal custody log should record the most precise controlled location practical, such as:
+The 3NB internal custody log should record the most precise controlled location practical, such as:<sup><a href="#ref-22">[22]</a></sup>
 
 - Building.
 - Room number.
@@ -458,7 +458,7 @@ The 3NB internal custody log should record the most precise controlled location 
 
 # 24. Scenario: Moving Customer Assets Between Rooms
 
-Moving a customer asset between rooms should require:
+Moving a customer asset between rooms should preserve accountability and approved storage; require:<sup><a href="#ref-15">[15]</a></sup><sup><a href="#ref-25">[25]</a></sup>
 
 1. Authorized person moving the asset.
 2. Continuous custody or proper packaging.
@@ -466,7 +466,7 @@ Moving a customer asset between rooms should require:
 4. Witness or two-person integrity (TPI) when required by material type or local SOP.
 5. Storage only in approved rooms or containers.
 
-A new customer hand receipt is not required for every internal room move if 3NB remains the accountable temporary custodian and the internal movement log is complete.
+A new customer hand receipt is not required for every internal room move if 3NB remains the accountable temporary custodian and the internal movement log is complete.<sup><a href="#ref-22">[22]</a></sup>
 
 **Security consequence:** unlogged internal movement can look identical to loss during an audit.
 
@@ -474,7 +474,7 @@ A new customer hand receipt is not required for every internal room move if 3NB 
 
 # 25. Scenario: Imaging Complete and Customer Notification
 
-When imaging is complete, 3NB should:
+When imaging is complete, 3NB should close out custody before release:<sup><a href="#ref-15">[15]</a></sup>
 
 1. Reconcile chassis and drive/media serials.
 2. Verify no extra classified media, labels, notes, or removable devices remain with the asset.
@@ -488,7 +488,7 @@ When imaging is complete, 3NB should:
 
 # 26. Scenario: Return to Customer Unit
 
-Return should mirror intake:
+Return should mirror intake so custody remains documented through final receipt:<sup><a href="#ref-15">[15]</a></sup>
 
 1. Customer courier arrives with valid authorization.
 2. 3NB validates courier identity and authority.
@@ -519,7 +519,7 @@ DoD characterizes an **infraction** as noncompliance that does not result in los
 
 # 28. Practical Intake Checklist
 
-Before accepting a SIPR asset for imaging, confirm:
+Before accepting a SIPR asset for imaging, confirm:<sup><a href="#ref-12">[12]</a></sup><sup><a href="#ref-15">[15]</a></sup>
 
 - Asset is expected and authorized.
 - Courier is appointed and has required documents.
@@ -536,7 +536,7 @@ Before accepting a SIPR asset for imaging, confirm:
 
 # 29. Practical Return Checklist
 
-Before releasing the asset back to the customer, confirm:
+Before releasing the asset back to the customer, confirm:<sup><a href="#ref-15">[15]</a></sup>
 
 - Imaging is complete.
 - Asset and media serials reconcile.
@@ -568,7 +568,7 @@ These rules prevent most avoidable CMCC mistakes:
 
 Do not treat “this laptop is now SIPR” as an informal technician decision.
 
-Before a device is upclassed or accepted as SIPR/classified material:
+Before a device is upclassed or accepted as SIPR/classified material:<sup><a href="#ref-16">[16]</a></sup><sup><a href="#ref-22">[22]</a></sup><sup><a href="#ref-28">[28]</a></sup>
 
 1. Security/CMCC authority approves the change and required storage path.
 2. Chassis, drive, and removable-media serials are physically verified.
@@ -578,15 +578,15 @@ Before a device is upclassed or accepted as SIPR/classified material:
 
 Classified control measures apply to computers, hard drives, disks, documents, and other media containing classified information.<sup><a href="#ref-16">[16]</a></sup>
 
-**Security consequence:** if the SF inventory says “unclassified laptop” but the CMCC record says “SIPR asset,” the command has an accountability mismatch.
+**Security consequence:** if the SF inventory says “unclassified laptop” but the CMCC record says “SIPR asset,” the command has an accountability mismatch.<sup><a href="#ref-22">[22]</a></sup>
 
 ---
 
 # 32. Working Notes, Drafts, and Scratch Documents
 
-Working notes can become classified material as soon as they contain classified information.
+Working notes can become classified material as soon as they contain classified information.<sup><a href="#ref-28">[28]</a></sup>
 
-For working papers or notes:
+For working papers or notes:<sup><a href="#ref-28">[28]</a></sup>
 
 - Mark the **top and bottom** with the highest classification present.
 - Date the working paper when created.
@@ -601,14 +601,14 @@ DoD marking policy specifically addresses classified working papers and standard
 
 # 33. Maintain or Destroy Working Notes
 
-Do not let scratch paper become an unofficial archive.
+Do not let scratch paper become an unofficial archive.<sup><a href="#ref-28">[28]</a></sup><sup><a href="#ref-29">[29]</a></sup>
 
 When working notes are no longer needed:
 
 - Destroy them using approved classified-destruction procedures.
 - Record destruction when local SOP or the material type requires it.
 - If retained, store and account for them at the proper classification level.
-- If released outside the workspace, mark, route, and receipt them like any other classified material.
+- If released outside the workspace, mark, route, and receipt them like any other classified material.<sup><a href="#ref-18">[18]</a></sup><sup><a href="#ref-22">[22]</a></sup>
 
 Classified information must be destroyed only by authorized means that prevent reconstruction.<sup><a href="#ref-29">[29]</a></sup>
 
@@ -641,7 +641,7 @@ CMCC control is about answering four questions at all times:
 3. **Who** is responsible for it?
 4. **What record** proves the chain of custody?
 
-For SIPR imaging workflows, the technical task is not complete until the custody record is complete.
+For SIPR imaging workflows, the technical task is not complete until the custody record is complete.<sup><a href="#ref-15">[15]</a></sup><sup><a href="#ref-22">[22]</a></sup>
 
 **Security consequence:** if the record cannot prove custody, the command may have to treat the situation as a potential loss or compromise.
 
