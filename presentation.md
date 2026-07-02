@@ -175,7 +175,7 @@ Here, **"CRYPTO"** is a COMSEC marking/control label—not another acronym to de
 
 A **KMI Operating Account (KOA)** is the KMI account relationship used to manage devices and control distribution of KMI products to those devices.<sup><a href="#ref-7">[7]</a></sup>
 
-<div class="callout counter"><strong>Counter Example:</strong> using a property receipt alone for COMSEC/KMI material may fail to meet COMSEC accountability requirements.</div>
+<div class="callout counter"><strong>Counter Example:</strong> using a property receipt, like a consolidated memorandum receipt (CMR), alone for COMSEC/KMI material may fail to meet COMSEC accountability requirements.</div>
 
 ---
 
