@@ -564,7 +564,25 @@ These rules prevent most avoidable CMCC mistakes:
 
 ---
 
-# 31. Working Notes, Drafts, and Scratch Documents
+# 31. Upclassing Devices to SIPR
+
+Do not treat “this laptop is now SIPR” as an informal technician decision.
+
+Before a device is upclassed or accepted as SIPR/classified material:
+
+1. Security/CMCC authority approves the change and required storage path.
+2. Chassis, drive, and removable-media serials are physically verified.
+3. The device is marked for the resulting classification and caveats.
+4. The SF inventory/local classified-material inventory is updated from unclassified/property-only status to classified custody status.
+5. The CMCC control number is assigned or updated and tied to the property tag, chassis serial, and media serials.
+
+Classified control measures apply to computers, hard drives, disks, documents, and other media containing classified information.<sup><a href="#ref-16">[16]</a></sup>
+
+**Security consequence:** if the SF inventory says “unclassified laptop” but the CMCC record says “SIPR asset,” the command has an accountability mismatch.
+
+---
+
+# 32. Working Notes, Drafts, and Scratch Documents
 
 Working notes can become classified material as soon as they contain classified information.
 
@@ -581,7 +599,7 @@ DoD marking policy specifically addresses classified working papers and standard
 
 ---
 
-# 32. Maintain or Destroy Working Notes
+# 33. Maintain or Destroy Working Notes
 
 Do not let scratch paper become an unofficial archive.
 
@@ -598,7 +616,7 @@ Classified information must be destroyed only by authorized means that prevent r
 
 ---
 
-# 33. When in Doubt, Stop the Line
+# 34. When in Doubt, Stop the Line
 
 Pause the movement, imaging, or return when:
 
@@ -614,7 +632,7 @@ Escalate to the Security Manager, CMCC custodian, COMSEC Manager, KOA Manager, o
 
 ---
 
-# 34. Bottom Line
+# 35. Bottom Line
 
 CMCC control is about answering four questions at all times:
 
