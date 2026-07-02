@@ -91,6 +91,8 @@ style: |
 
 ## Custody, Couriering, Imaging, and Return Procedures
 
+Staff Sergeant Athan L Clark
+
 **Audience:** Marines and staff who may receive, move, image, store, or return classified SIPR assets.
 
 **Training outcome:** understand the vocabulary, records, custody standards, courier requirements, and end-to-end process for temporary unit-to-unit transfer of SIPR assets.
@@ -218,6 +220,10 @@ Examples may include approved cryptographic devices, components, or modules that
 **CBAF:** for this deck, CBAF refers to the local **Command Billet Access Form** or equivalent billet/access validation artifact. Treat it as a local command record that may support access validation, not as a substitute for clearance, need-to-know, courier appointment, SD-572, SF-153, or CMCC custody records unless local policy explicitly says otherwise.
 
 <div class="callout counter"><strong>Counter Example:</strong> using the wrong validation document may mean the recipient was never properly authorized to receive or access the material.</div>
+
+---
+
+![sf-153](./sf-153.webp)
 
 ---
 
