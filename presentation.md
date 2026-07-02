@@ -165,13 +165,13 @@ Examples may include approved cryptographic devices, components, or modules that
 
 ---
 
-# 7. What Are SF-153, SD-572, CBAR, and CBAP?
+# 7. What Are SF-153, SD-572, and CBAF?
 
 **SF-153** is the COMSEC Material Report. It may support transfer, inventory, destruction, hand-receipt, or other COMSEC material reporting actions.<sup><a href="#ref-9">[9]</a></sup>
 
 **SD-572** is the Cryptographic Access Certification and Termination form used to certify and terminate access to U.S. classified cryptographic information.<sup><a href="#ref-10">[10]</a></sup>
 
-**CBAR/CBAP:** these terms appear to be local or command-specific validation artifacts rather than publicly verified DoD-wide form names. Treat them as local access/briefing/authorization records until your COMSEC Manager or Security Manager confirms the correct form name and authority.
+**CBAF:** for this deck, CBAF refers to the local **Command Billet Access Form** or equivalent billet/access validation artifact. Treat it as a local command record that may support access validation, not as a substitute for clearance, need-to-know, courier appointment, SD-572, SF-153, or CMCC custody records unless local policy explicitly says otherwise.
 
 **Security consequence:** using the wrong validation document may mean the recipient was never properly authorized to receive or access the material.
 
