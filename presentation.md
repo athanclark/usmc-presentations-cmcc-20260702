@@ -105,7 +105,7 @@ It does **not** replace:
 
 - Local Command Security Manager direction.
 - COMSEC Manager/KMI Operating Account guidance.
-- SCI/SAP-specific rules.
+- Sensitive Compartmented Information (SCI) and Special Access Program (SAP)-specific rules.
 - Local vault/open-storage approval documentation.
 
 When local policy is stricter than this deck, use the stricter rule.<sup><a href="#ref-1">[1]</a></sup>
